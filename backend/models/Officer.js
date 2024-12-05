@@ -1,10 +1,13 @@
 const mongoose = require("mongoose")
 
 const officerSchema = new mongoose.Schema({
-    bkID:String,
-    password:String,
+    bkID: { type: String, required: true, unique: true },
+    name: { type: String, required: true },
+    password: { type: String, required: true },
+    printers: [{ type: String }] // Array of strings
+
 })
 
-const officerModel = mongoose.model("Officer", officerSchema)
+const Officer = mongoose.model("Officer", officerSchema)
 
-module.exports = officerModel
+module.exports = Officer

@@ -4,8 +4,15 @@ const studentSchema = new mongoose.Schema({
     bkID: { type: String, required: true, unique: true },
     name: { type: String, required: true },
     password: { type: String, required: true },
+    purchase: [
+        {
+            date: { type: Date, required: true },
+            amount: { type: Number, required: true },
+            paper: { type: Number, required: true }
+        }
+    ]
 });
 
-const studentModel = mongoose.model("Student", studentSchema)
+const Student = mongoose.model("Student", studentSchema);
 
-module.exports = studentModel
+module.exports = Student; // CommonJS export

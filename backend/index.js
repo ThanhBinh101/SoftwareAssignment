@@ -1,39 +1,31 @@
-const express = require('express'); // Import Express
-const app = express(); // Create an instance of Express
+const express = require("express")
+const bodyParser = require("body-parser");
+const mongoose = require("mongoose");
+const cors = require( "cors");
+const dotenv = require( "dotenv");
+const helmet = require( "helmet");
+const morgan = require( "morgan");
 
-const cors = require('cors'); // Import CORS middleware
-const studentModel = require('./models/Student.js'); // Import Student model
-const connectDB = require('./database.js');
+const Student = require("./models/Student");
 
-// Middleware
-app.use(express.json()); // Parse JSON body
-app.use(cors()); // Enable CORS
 
-connectDB()
+dotenv.config();
+const app = express();
+app.use(express.json());
+app.use(helmet());
+app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
+app.use(morgan("common"));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cors());
 
-// Routes
-app.get('/', (req, res) => {
-    res.send('Welcome to the Smart Printing API!');
-});
-
-app.post('/', async (req, res) => {
-    const { bkID, password } = req.body; // Destructure request body
-    try {
-        console.log(studentModel.json)
-        const check = await studentModel.find(); // Find user by bkID
-        console.log(check)
-        if (check) {
-            res.json("student");
-        } else {
-            res.json("notexist");
-        }
-    } catch (e) {
-        console.error(error); // Log the error for debugging
-        res.status(500).json("An error occurred"); // Send a server error response
-    }
-});
-
-// Start Server
-app.listen(3001, () => {
-    console.log('Server is running on port 3001');
-});
+const PORT = process.env.PORT || 3001;
+mongoose
+  .connect(process.env.URL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => {
+    app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
+  })
+  .catch((error) => console.log(`${error} did not connect`));
