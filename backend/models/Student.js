@@ -1,9 +1,10 @@
 const mongoose = require("mongoose")
 
 const studentSchema = new mongoose.Schema({
-    name: String,
-    description: String,
-})
+    bkID: { type: String, required: true, unique: true },
+    name: { type: String, required: true },
+    password: { type: String, required: true },
+});
 
 const studentModel = mongoose.model("Student", studentSchema)
 

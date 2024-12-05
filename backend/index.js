@@ -1,18 +1,39 @@
 const express = require('express'); // Import Express
-const app = express();             // Create an instance of Express
+const app = express(); // Create an instance of Express
+
+const cors = require('cors'); // Import CORS middleware
+const studentModel = require('./models/Student.js'); // Import Student model
 const connectDB = require('./database.js');
-const studentModel = require('./models/Student.js')
-const cors = require('cors')
 
-app.use(express.json())
-app.use(cors )
-connectDB();
+// Middleware
+app.use(express.json()); // Parse JSON body
+app.use(cors()); // Enable CORS
 
-app.get('/', async  (req, res)=> {
-    const students = await studentModel.find()
-    res.json(students)
-})
-// Start server
-app.listen(3000, () => {
-    console.log('Server is running on port 3000');
+connectDB()
+
+// Routes
+app.get('/', (req, res) => {
+    res.send('Welcome to the Smart Printing API!');
+});
+
+app.post('/', async (req, res) => {
+    const { bkID, password } = req.body; // Destructure request body
+    try {
+        console.log(studentModel.json)
+        const check = await studentModel.find(); // Find user by bkID
+        console.log(check)
+        if (check) {
+            res.json("student");
+        } else {
+            res.json("notexist");
+        }
+    } catch (e) {
+        console.error(error); // Log the error for debugging
+        res.status(500).json("An error occurred"); // Send a server error response
+    }
+});
+
+// Start Server
+app.listen(3001, () => {
+    console.log('Server is running on port 3001');
 });
