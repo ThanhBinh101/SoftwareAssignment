@@ -1,31 +1,49 @@
-const express = require("express")
-const bodyParser = require("body-parser");
-const mongoose = require("mongoose");
-const cors = require( "cors");
-const dotenv = require( "dotenv");
-const helmet = require( "helmet");
-const morgan = require( "morgan");
+import express from 'express';
+import fs from 'fs';
+import path from 'path';
+import cors from 'cors';
 
-const Student = require("./models/Student");
-
-
-dotenv.config();
 const app = express();
-app.use(express.json());
-app.use(helmet());
-app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
-app.use(morgan("common"));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+const port = 3001;
+
+// Enable CORS for the frontend
 app.use(cors());
 
-const PORT = process.env.PORT || 3001;
-mongoose
-  .connect(process.env.URL, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
-  .then(() => {
-    app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
-  })
-  .catch((error) => console.log(`${error} did not connect`));
+// Middleware to parse JSON body
+app.use(express.json());
+
+// Define the path to the db.json file
+const __dirname = path.dirname(new URL(import.meta.url).pathname);
+const filePath = path.join(__dirname, '../frontend/db.json');
+
+// Endpoint to update the printer status
+app.put('/api/update-printer-status', (req, res) => {
+  const { id, status } = req.body;
+
+  if (!id || !status) {
+    return res.status(400).send('Printer ID and status are required');
+  }
+
+  // Read the db.json file to get the printer data
+  fs.readFile(filePath, 'utf-8', (err, data) => {
+    if (err) return res.status(500).send('Error reading file');
+
+    let printers = JSON.parse(data);
+
+    const printerIndex = printers.findIndex(printer => printer.id === id);
+    if (printerIndex === -1) return res.status(404).send('Printer not found');
+
+    printers[printerIndex].status = status;  // Update the status
+
+    // Save the updated printers data back to db.json
+    fs.writeFile(filePath, JSON.stringify(printers, null, 2), 'utf-8', (err) => {
+      if (err) return res.status(500).send('Error saving file');
+      return res.status(200).json(printers[printerIndex]);
+    });
+  });
+});
+
+// Start the server
+app.listen(port, () => {
+  console.log(`Backend server running on http://localhost:${port}`);
+});

@@ -45,16 +45,17 @@ const router = createBrowserRouter([
         element: <AdminViewReport/>
       },
       {
-        path: "/officerHomePage",
+        path: "/officerHomePage/:id",
         element: <OfficerHomepage/>
       },
       {
-        path: "/officerReport",
+        path: "/officerReport/:id",
         element: <OfficerReport/>
       },
     ],
   },
 ]);
+
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>

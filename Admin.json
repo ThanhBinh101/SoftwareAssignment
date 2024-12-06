@@ -1,0 +1,46 @@
+[{
+  "_id": {
+    "$oid": "6750908d4373fa8b63b2ae33"
+  },
+  "accounts": [
+    {
+      "id": "2252083",
+      "password": "1",
+      "name": "Nguyen Thi Thanh Binh"
+    }
+  ],
+  "purchases": [
+    5000,
+    10000,
+    15000,
+    20000,
+    30000,
+    50000,
+    80000,
+    100000
+  ],
+  "format": [
+    {
+      "name": "PDF",
+      "allow": true
+    },
+    {
+      "name": "DOC/DOCX",
+      "allow": true
+    },
+    {
+      "name": "TXT",
+      "allow": true
+    },
+    {
+      "name": "JPEG/JPG",
+      "allow": true
+    }
+  ],
+  "nextRefill": {
+    "$date": "2004-10-01T00:00:00.000Z"
+  },
+  "paper": 1,
+  "price": 500,
+  "refillAmount": 100
+}]

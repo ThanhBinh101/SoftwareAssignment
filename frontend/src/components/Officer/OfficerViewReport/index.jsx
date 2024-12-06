@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ExportButton from "./ExportButton";
 import PrinterRefillPaperButton from './PrinterRefillPaperButton';
 import PrinterMaintainButton from "./PrinterMaintainButton";
@@ -7,6 +7,9 @@ import PrinterList from "./PrinterList";
 import Table from "../Table";
 import PrinterExport from "../../PopUp/PrinterReportExport"; 
 import MaintainPrinter from "../../PopUp/MaintainPrinter";
+import { use } from "react";
+import axios from "axios";
+import { useParams } from "react-router-dom";
 
 const ViewReport = () => {
   const [startDate, setStartDate] = useState("");
@@ -15,7 +18,9 @@ const ViewReport = () => {
   const [exportModalShow, setExportModalShow] = useState(false);
   const [maintainModalShow, setMaintainModalShow] = useState(false);
   const [selectedPrinter, setSelectedPrinter] = useState(null);
-  const [printerStatuses, setPrinterStatuses] = useState({}); 
+  const [matchingDocs, setMatchingDocs] = useState([]);
+  const [maintainHis, setMaintainHis] = useState([])
+  const [refillHis, setRefillHis] = useState([]);
 
   const handleStartDateChange = (e) => setStartDate(e.target.value);
   const handleEndDateChange = (e) => setEndDate(e.target.value);
@@ -48,7 +53,31 @@ const ViewReport = () => {
     }
   };
 
-
+  
+  useEffect(() => {
+    const fetchPrinterHistory = async () => {
+      if (selectedPrinter) {
+        try {
+          const history = selectedPrinter.history || [];  // Store the fetched history data
+  
+          const allDocs = (await axios.get(`http://localhost:3000/Document`)).data;
+  
+          // Assuming history contains document IDs that can be matched with the documents
+          const matchings = allDocs.filter((doc) => 
+            history.some((item) => item === doc.id)  // Compare item.documentID with doc.id
+          );
+          setMatchingDocs(matchings);  // Set the filtered documents
+          setMaintainHis(selectedPrinter.maintains);
+          setRefillHis(selectedPrinter.refillPaper);
+        } catch (err) {
+          console.error("Error fetching printer history:", err);
+        }
+      }
+    };
+  
+    fetchPrinterHistory();
+  }, [selectedPrinter]);
+  
 
   return (
     <div>
@@ -115,7 +144,7 @@ const ViewReport = () => {
               <div className="text-2xl font-bold mb-[20px]">
                 <span className="underline">Location:</span>
                 <span> </span>
-                <span className="text-[#A68BC1]">{selectedPrinter}</span>
+                <span className="text-[#A68BC1]">{selectedPrinter ? selectedPrinter.id : "No printer"}</span>
               </div>
               <div className="text-2xl font-bold mb-[20px]">
                 <span className="underline">Next maintain day:</span> 
@@ -125,13 +154,13 @@ const ViewReport = () => {
               <div className="text-2xl font-bold mb-[20px]">
                 <span className="underline">Available paper:</span> 
                 <span> </span>
-                <span className="text-[#A68BC1]"> 100</span>
+                <span className="text-[#A68BC1]"> {selectedPrinter ? selectedPrinter.paper : ""}</span>
               </div>
               <div className="text-2xl font-bold mb-[20px]">
                 <span className="underline">Status:</span> 
                 <span> </span>
                 <span className="text-[#A68BC1]">
-                  {printerStatuses[selectedPrinter] || "On"}
+                {selectedPrinter ? selectedPrinter.status : ""}
                 </span>
               </div>
               <div className="mt-[150px] mb-[50px]">
@@ -163,26 +192,13 @@ const ViewReport = () => {
           <Table  
             title={<span className="text-lg font-semibold">{`Printer History`}</span>} 
             tableCol={["Date", "Finish Day", "File", "Student", "Number of Paper"]} 
-            tableRow={[
-              ["1", "1", "1", "1", "1"],
-              ["1", "1", "1", "1", "1"],
-              ["1", "1", "1", "1", "1"],
-              ["1", "1", "1", "1", "1"],
-              ["1", "1", "1", "1", "1"],
-              ["1", "1", "1", "1", "1"],
-              ["1", "1", "1", "1", "1"],
-              ["1", "1", "1", "1", "1"],
-              ["1", "1", "1", "1", "1"],
-              ["1", "1", "1", "1", "1"],
-              ["1", "1", "1", "1", "1"],
-              ["1", "1", "1", "1", "1"],
-              ["1", "1", "1", "1", "1"],
-              ["1", "1", "1", "1", "1"],
-              ["1", "1", "1", "1", "1"],
-              ["1", "1", "1", "1", "1"],
-              ["1", "1", "1", "1", "1"],
-              ["1", "1", "1", "1", "1"]
-            ]}
+            tableRow={matchingDocs.map((item) => [
+              item.printDate,
+              item.finishDate,
+              item.name,
+              item.studentID,
+              item.paper
+            ])}
             bgColor={'#F7BCD633'}
             titleColor={'black'}
             rowTextColor={'#A68BC1'}
@@ -195,20 +211,10 @@ const ViewReport = () => {
             <Table
               title={<span className="text-lg font-semibold">{`Maintain History`}</span>} 
               tableCol={["Day", "Status"]} 
-              tableRow={[
-                ["1", "1"],
-                ["1", "1"],
-                ["1", "1"],
-                ["1", "1"],
-                ["1", "1"],
-                ["1", "1"],
-                ["1", "1"],
-                ["1", "1"],
-                ["1", "1"],
-                ["1", "1"],
-                ["1", "1"],
-                ["1", "1"],
-              ]}
+              tableRow={maintainHis.map((item)=>[
+                item.date,
+                item.status
+              ])}
               bgColor={'white'} 
               titleColor={'black'}
               rowTextColor={'#A68BC1'}
@@ -218,24 +224,11 @@ const ViewReport = () => {
           <div className="mt-[80px] mb-[100px] w-[380px] h-[278px]">
             <Table
               title={<span className="text-lg font-semibold">{`Refill History`}</span>} 
-              tableCol={["Day", "Status"]} 
-              tableRow={[
-                ["1", "1"],
-                ["1", "1"],
-                ["1", "1"],
-                ["1", "1"],
-                ["1", "1"],
-                ["1", "1"],
-                ["1", "1"],
-                ["1", "1"],
-                ["1", "1"],
-                ["1", "1"],
-                ["1", "1"],
-                ["1", "1"],
-                ["1", "1"],
-                ["1", "1"],
-                ["1", "1"],
-              ]}
+              tableCol={["Day", "Number"]} 
+              tableRow={refillHis.map((item)=>[
+                item.date,
+                item.amount
+              ])}
               bgColor="#FFEEE8"
               titleColor={'black'}
               rowTextColor={'#A68BC1'}

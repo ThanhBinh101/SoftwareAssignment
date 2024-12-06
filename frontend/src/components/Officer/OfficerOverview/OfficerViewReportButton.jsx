@@ -3,10 +3,10 @@ import Button from "../../Button";
 import { useNavigate } from 'react-router-dom';
 
 
-const OfficerViewReportButton = () => {
+const OfficerViewReportButton = ({id}) => {
   const navigate = useNavigate();
   function onClickButton() {
-      navigate("/officerReport");
+      navigate("/officerReport/:id");
   }
   return (
     <div className="flex justify-between">

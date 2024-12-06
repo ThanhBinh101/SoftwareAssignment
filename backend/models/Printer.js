@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 
 const printerSchema = new mongoose.Schema({
     bkID: { type: String, required: true, unique: true },
@@ -13,4 +13,4 @@ const printerSchema = new mongoose.Schema({
 
 const Printer = mongoose.model("Printer", printerSchema);
 
-export default Printer;
+module.exports=Printer;
