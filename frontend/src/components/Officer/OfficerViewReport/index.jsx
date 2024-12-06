@@ -7,9 +7,7 @@ import PrinterList from "./PrinterList";
 import Table from "../Table";
 import PrinterExport from "../../PopUp/PrinterReportExport"; 
 import MaintainPrinter from "../../PopUp/MaintainPrinter";
-import { use } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
 
 const ViewReport = () => {
   const [startDate, setStartDate] = useState("");

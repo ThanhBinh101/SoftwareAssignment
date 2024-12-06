@@ -1,9 +1,35 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import Table from "../../../Officer/Table"
 import List from "./OfficerList"
+import axios from 'axios';
 
 const OfficerReport = () => {
-  
+  const [selectedPrinter, setSelectedPrinter] = useState(null);
+  const [matchingDocs, setMatchingDocs] = useState([]);
+  const [maintainHis, setMaintainHis] = useState([])
+  const [refillHis, setRefillHis] = useState([]);
+
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        if(selectedPrinter) {
+          const history = selectedPrinter.history || [];
+          const allDocs = (await axios.get(`http://localhost:3000/Document`)).data;
+          const matchings = allDocs.filter((doc) => 
+            history.some((item) => item === doc.id) 
+          );
+          setMatchingDocs(matchings);
+          setMaintainHis(selectedPrinter.maintains);
+          setRefillHis(selectedPrinter.refillPaper);
+        }
+      } catch (err) {
+        console.error("Error fetching officer data:", err);
+      }
+    };
+    fetchData();
+  }, [selectedPrinter]);
+
   return (
     <div>
       <div className="flex items-start ml-[100px] mt-[30px] w-full h-full"> 
@@ -13,33 +39,20 @@ const OfficerReport = () => {
           <span className="text-[18px] ml-[66px] font-inter font-semibold">Printer List</span>
 
           <div className="mt-[15px] w-[400px] h-[500px]">
-            <List />
+            <List onSelectedPrinter = {setSelectedPrinter}/>
           </div>
         </div>
       <div className =" w-[850px] ml-[5px]"> 
           <Table  
             title={<span className="text-lg font-semibold">{`Printer History`}</span>} 
             tableCol={["Date", "Finish Day", "File", "Printer", "Number of Paper"]} 
-            tableRow={[
-              ["1", "1", "1","1","1"],
-              ["1", "1", "1","1","1"],
-              ["1", "1", "1","1","1"],
-              ["1", "1", "1","1","1"],
-              ["1", "1", "1","1","1"],
-              ["1", "1", "1","1","1"],
-              ["1", "1", "1","1","1"],
-              ["1", "1", "1","1","1"],
-              ["1", "1", "1","1","1"],
-              ["1", "1", "1","1","1"],
-              ["1", "1", "1","1","1"],
-              ["1", "1", "1","1","1"],
-              ["1", "1", "1","1","1"],
-              ["1", "1", "1","1","1"],
-              ["1", "1", "1","1","1"],
-              ["1", "1", "1","1","1"],
-              ["1", "1", "1","1","1"],
-              ["1", "1", "1","1","1"]
-            ]}
+            tableRow={matchingDocs.map((item) => [
+              item.printDate,
+              item.finishDate,
+              item.name,
+              item.studentID,
+              item.paper
+            ])}
             bgColor={'#F7BCD633'}
             titleColor={'black'}
             rowTextColor={'#A68BC1'}
@@ -54,20 +67,10 @@ const OfficerReport = () => {
               title={<span className="text-lg font-semibold">{`Maintain History`}</span>} 
               tableCol={["Day", "Status"]} 
               colWidths={["250px","250px"]}
-              tableRow={[
-                ["1", "1"],
-                ["1", "1"],
-                ["1", "1"],
-                ["1", "1"],
-                ["1", "1"],
-                ["1", "1"],
-                ["1", "1"],
-                ["1", "1"],
-                ["1", "1"],
-                ["1", "1"],
-                ["1", "1"],
-                ["1", "1"],
-              ]}
+              tableRow={maintainHis.map((item)=>[
+                item.date,
+                item.status
+              ])}
               bgColor={'white'} 
               titleColor={'black'}
               rowTextColor={'#A68BC1'}
@@ -80,23 +83,10 @@ const OfficerReport = () => {
               title={<span className="text-lg font-semibold">{`Refill History`}</span>} 
               tableCol={["Day", "Number of paper"]} 
               colWidths={["250px","250px"]}
-              tableRow={[
-                ["1", "1"],
-                ["1", "1"],
-                ["1", "1"],
-                ["1", "1"],
-                ["1", "1"],
-                ["1", "1"],
-                ["1", "1"],
-                ["1", "1"],
-                ["1", "1"],
-                ["1", "1"],
-                ["1", "1"],
-                ["1", "1"],
-                ["1", "1"],
-                ["1", "1"],
-                ["1", "1"],
-              ]}
+              tableRow={refillHis.map((item)=>[
+                item.date,
+                item.amount
+              ])}
               bgColor="#FFEEE8"
               titleColor={'black'}
               rowTextColor={'#A68BC1'}

@@ -1,14 +1,44 @@
 import Table from "../../../Officer/Table"
 import List from "./StudentList"
 import React, { useState, useEffect } from 'react';
+import axios from "axios";
 
 const StudentReport = () => {
   const [selectedStudent, setSelectedStudent] = useState(null);
+  const [matchDocs, setMatchDocs] = useState(null);
   let purchases = null;
   console.log(selectedStudent);
   if(selectedStudent) {
     purchases = selectedStudent.purchases;
   }
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(`http://localhost:3000/Document`);
+        console.log("Response Data:", response.data); // Debugging
+        const allDocs = response.data;
+  
+        if (Array.isArray(allDocs)) {
+          if (selectedStudent) {
+            const matchDocs = allDocs.filter((doc) => doc.studentID === selectedStudent.id);
+            setMatchDocs(matchDocs);
+          } else {
+            setMatchDocs([]); // Clear if no student is selected
+          }
+        } else {
+          console.error("Expected an array, but got:", allDocs);
+          setMatchDocs([]); // Clear matchDocs if data is not an array
+        }
+      } catch (err) {
+        console.error("Error fetching data:", err);
+      }
+    };
+  
+    fetchData();
+  }, [selectedStudent]);
+  
+
   return (
     <div>
       <div className="flex items-start ml-[100px] mt-[30px] w-full h-full"> 
@@ -20,33 +50,18 @@ const StudentReport = () => {
         </div>
         
         {/* Render Print History table only if selectedStudent is available */}
-        {selectedStudent && (
+        {selectedStudent && matchDocs && (
           <div className="ml-[50px] w-[850px] h-full"> 
             <Table  
               title={<span className="text-lg font-semibold">{`Print History`}</span>} 
               tableCol={["Date", "Finish Day", "File", "Printer", "Number of Paper"]} 
-              tableRow={[
-                ["1", "1", "1", "1", "1"],
-                ["1", "1", "1", "1", "1"],
-                ["1", "1", "1", "1", "1"],
-                ["1", "1", "1", "1", "1"],
-                ["1", "1", "1", "1", "1"],
-                ["1", "1", "1", "1", "1"],
-                ["1", "1", "1", "1", "1"],
-                ["1", "1", "1", "1", "1"],
-                ["1", "1", "1", "1", "1"],
-                ["1", "1", "1", "1", "1"],
-                ["1", "1", "1", "1", "1"],
-                ["1", "1", "1", "1", "1"],
-                ["1", "1", "1", "1", "1"],
-                ["1", "1", "1", "1", "1"],
-                ["1", "1", "1", "1", "1"],
-                ["1", "1", "1", "1", "1"],
-                ["1", "1", "1", "1", "1"],
-                ["1", "1", "1", "1", "1"],
-                ["1", "1", "1", "1", "1"],
-                ["1", "1", "1", "1", "1"],
-              ]}
+              tableRow={matchDocs.map((item) => [
+                item.printDate,
+                item.finishDate,
+                item.name,
+                item.printerID,
+                item.paper
+              ])}
               bgColor={'#FFEEE8'}
               titleColor={'black'}
               rowTextColor={'#A68BC1'}
