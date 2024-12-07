@@ -1,49 +1,65 @@
-import express from 'express';
-import fs from 'fs';
-import path from 'path';
-import cors from 'cors';
+const express = require('express');
+const fs = require('fs');
+const path = require('path');
+const cors = require('cors');
 
 const app = express();
-const port = 3001;
+const PORT = 8386;
 
-// Enable CORS for the frontend
-app.use(cors());
-
-// Middleware to parse JSON body
-app.use(express.json());
-
-// Define the path to the db.json file
-const __dirname = path.dirname(new URL(import.meta.url).pathname);
 const filePath = path.join(__dirname, '../frontend/db.json');
 
-// Endpoint to update the printer status
-app.put('/api/update-printer-status', (req, res) => {
-  const { id, status } = req.body;
+// Middleware to parse JSON
+app.use(express.json());
 
-  if (!id || !status) {
-    return res.status(400).send('Printer ID and status are required');
-  }
+app.use(cors({
+  origin: 'http://localhost:5173', // Update to your frontend's URL
+}));
 
-  // Read the db.json file to get the printer data
-  fs.readFile(filePath, 'utf-8', (err, data) => {
-    if (err) return res.status(500).send('Error reading file');
+app.delete('/Printer/:id', (req, res) => {
+  const printerId = req.params.id;
 
-    let printers = JSON.parse(data);
+  fs.readFile(filePath, 'utf8', (err, data) => {
+    if (err) {
+      console.error('Error reading db.json:', err);
+      return res.status(500).json({ message: 'Server error' });
+    }
 
-    const printerIndex = printers.findIndex(printer => printer.id === id);
-    if (printerIndex === -1) return res.status(404).send('Printer not found');
+    try {
+      // Parse the JSON data
+      const db = JSON.parse(data);
 
-    printers[printerIndex].status = status;  // Update the status
+      // Ensure `Printer` key exists
+      if (!db.Printer || !Array.isArray(db.Printer)) {
+        return res.status(400).json({ message: 'Invalid database structure' });
+      }
 
-    // Save the updated printers data back to db.json
-    fs.writeFile(filePath, JSON.stringify(printers, null, 2), 'utf-8', (err) => {
-      if (err) return res.status(500).send('Error saving file');
-      return res.status(200).json(printers[printerIndex]);
-    });
+      // Find the printer by ID
+      const printerIndex = db.Printer.findIndex((printer) => printer.id === printerId);
+
+      if (printerIndex === -1) {
+        return res.status(404).json({ message: 'Printer not found' });
+      }
+
+      // Remove the printer
+      db.Printer.splice(printerIndex, 1);
+
+      // Write updated data back to the file
+      fs.writeFile(filePath, JSON.stringify(db, null, 2), (writeErr) => {
+        if (writeErr) {
+          console.error('Error writing to db.json:', writeErr);
+          return res.status(500).json({ message: 'Server error' });
+        }
+
+        res.status(200).json({ message: `Printer ${printerId} deleted successfully` });
+      });
+    } catch (parseError) {
+      console.error('Error parsing db.json:', parseError);
+      return res.status(500).json({ message: 'Server error' });
+    }
   });
 });
 
 // Start the server
-app.listen(port, () => {
-  console.log(`Backend server running on http://localhost:${port}`);
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
 });

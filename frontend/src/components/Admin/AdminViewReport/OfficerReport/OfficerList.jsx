@@ -10,6 +10,7 @@ const List = ({ onSelectedPrinter }) => {
   const [officerData, setOfficerData] = useState([]);
   const [printerData, setPrinterData] = useState([]);
 
+  // Fetch officer data
   useEffect(() => {
     const fetchOfficerData = async () => {
       try {
@@ -28,10 +29,13 @@ const List = ({ onSelectedPrinter }) => {
       if (selectedOfficer) {
         try {
           const allPrinters = (await axios.get("http://localhost:3000/Printer")).data;
-          const filteredPrinters = allPrinters.filter((printer) =>
-            selectedOfficer.printers.includes(printer.id)
-          );
-          setPrinterData(filteredPrinters);
+          if(selectedOfficer.printers) {
+              const filteredPrinters = allPrinters.filter((printer) =>
+              selectedOfficer.printers.includes(printer.id)
+            );
+            setPrinterData(filteredPrinters);
+          }
+
         } catch (err) {
           console.error("Error fetching printer data:", err);
         }
@@ -61,7 +65,7 @@ const List = ({ onSelectedPrinter }) => {
   };
 
   const handleDeleteConfirm = () => {
-    console.log(`Deleted printer: ${printerToDelete}`);
+    console.log(`Deleted printer: ${printerToDelete.id}`);
     setDeleteModalShow(false);
     // Additional logic to delete the printer can go here
   };
@@ -137,7 +141,7 @@ const List = ({ onSelectedPrinter }) => {
         <DeletePrinter
           show={deleteModalShow}
           onClose={handleDeleteCancel}
-          printerCode={printerToDelete} // Pass the printer code to be displayed
+          printerCode={printerToDelete.id} // Pass the printer code to be displayed
         />
       )}
     </div>

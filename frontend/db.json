@@ -49,68 +49,67 @@
     }
   ],
   "Printer": [
-    {
-      "id": "306B1.1",
-      "location": "306B1",
-      "status": "Using",
-      "paper": 300,
-      "queue": [],
-      "maintains": [
-        {
-          "date": "2004-10-01",
-          "status": "Im not oke kinchana"
-        }
-      ],
-      "refillPaper" : [
-        {
-          "date": "2004-10-01",
-          "amount": 10
-        }
-      ],
-      "history" : [
-        "kfjq7d4xjxe8wg4t91",
-        "kfjq7d4xjxe8wg4t91"
-      
-      ]
-    },
-    {
-      "id": "306B1.2",
-      "location": "306B1",
-      "status": "On",
-      "paper": 300,
-      "queue": [],
-      "maintains": [
-        {
-          "date": "2004-10-01",
-          "status": "Im not oke kinchana"
-        }
-      ],
-      "refillPaper" : [
-        {
-          "date": "2004-10-01",
-          "amount": 10
-        }
-      ]
-    },
-    {
-      "id": "306B1.3",
-      "location": "306B1",
-      "status": "On",
-      "paper": 300,
-      "queue": [],
-      "maintains": [
-        {
-          "date": "2004-10-01",
-          "status": "Im not oke kinchana"
-        }
-      ],
-      "refillPaper" : [
-        {
-          "date": "2004-10-01",
-          "amount": 10
-        }
-      ]
-    }
+      {
+        "id": "306B1.1",
+        "location": "306B1",
+        "status": "Using",
+        "paper": 300,
+        "queue": [],
+        "maintains": [
+          {
+            "date": "2004-10-01",
+            "status": "Im not oke kinchana"
+          }
+        ],
+        "refillPaper": [
+          {
+            "date": "2004-10-01",
+            "amount": 10
+          }
+        ],
+        "history": [
+          "kfjq7d4xjxe8wg4t91",
+          "kfjq7d4xjxe8wg4t91"
+        ]
+      },
+      {
+        "id": "306B1.2",
+        "location": "306B1",
+        "status": "On",
+        "paper": 300,
+        "queue": [],
+        "maintains": [
+          {
+            "date": "2004-10-01",
+            "status": "Im not oke kinchana"
+          }
+        ],
+        "refillPaper": [
+          {
+            "date": "2004-10-01",
+            "amount": 10
+          }
+        ]
+      },
+      {
+        "id": "306B1.3",
+        "location": "306B1",
+        "status": "On",
+        "paper": 300,
+        "queue": [],
+        "maintains": [
+          {
+            "date": "2004-10-01",
+            "status": "Im not oke kinchana"
+          }
+        ],
+        "refillPaper": [
+          {
+            "date": "2004-10-01",
+            "amount": 10
+          }
+        ]
+      }
   ],
   "Officer": [
     {
