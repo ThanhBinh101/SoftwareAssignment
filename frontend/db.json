@@ -7,12 +7,12 @@
       "availablePaper": "10",
       "purchases": [
         {
-          "date": "2004-09-30",
+          "date": "2024-09-30",
           "paper": 100,
           "amount": 10000
         },
         {
-          "date": "2004-10-30",
+          "date": "2024-10-30",
           "paper": 100,
           "amount": 10000
         }
@@ -25,9 +25,9 @@
       "availablePaper": "10",
       "purchases": [
         {
-          "date": "2004-09-30",
+          "date": "2024-09-30",
           "paper": 100,
-          "amount": 10000
+          "amount": 20000
         },
         {
           "date": "2004-10-30",
@@ -42,8 +42,8 @@
       "id": "kfjq7d4xjxe8wg4t91",
       "name": "HelloWorld.pdf",
       "status": "printing",
-      "printDate": "2004-10-01",
-      "finishDate": "2004-10-01",
+      "printDate": "2024-10-01",
+      "finishDate": "2024-10-01",
       "paper": 10,
       "studentID": "2252083"
     }
@@ -57,13 +57,13 @@
         "queue": [],
         "maintains": [
           {
-            "date": "2004-10-01",
+            "date": "2024-10-01",
             "status": "Im not oke kinchana"
           }
         ],
         "refillPaper": [
           {
-            "date": "2004-10-01",
+            "date": "2024-10-01",
             "amount": 10
           }
         ],
@@ -80,13 +80,13 @@
         "queue": [],
         "maintains": [
           {
-            "date": "2004-10-01",
+            "date": "2024-10-01",
             "status": "Im not oke kinchana"
           }
         ],
         "refillPaper": [
           {
-            "date": "2004-10-01",
+            "date": "2024-10-01",
             "amount": 10
           }
         ]
@@ -99,13 +99,13 @@
         "queue": [],
         "maintains": [
           {
-            "date": "2004-10-01",
+            "date": "2024-10-01",
             "status": "Im not oke kinchana"
           }
         ],
         "refillPaper": [
           {
-            "date": "2004-10-01",
+            "date": "2024-10-01",
             "amount": 10
           }
         ]

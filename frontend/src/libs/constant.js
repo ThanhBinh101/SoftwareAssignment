@@ -19,7 +19,7 @@ export const BUTTON_USER_OVERVIEW = [
   },
 ];
 
-export const BUTTON_CHOOSE_STUDENT =[
+export const BUTTON_CHOOSE_STUDENT = [
   {
     title: "Student",
     backgroundColor:"primary",

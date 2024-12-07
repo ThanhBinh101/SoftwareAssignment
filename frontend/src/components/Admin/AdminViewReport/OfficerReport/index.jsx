@@ -1,37 +1,56 @@
-import React, {useState, useEffect} from 'react';
+/* eslint-disable react/prop-types */
+import {useState, useEffect} from 'react';
 import Table from "../../../Officer/Table"
 import List from "./OfficerList"
 import axios from 'axios';
 
-const OfficerReport = () => {
-  const [selectedPrinter, setSelectedPrinter] = useState(null);
+const OfficerReport = ({
+  officerList,
+  setOfficerList,
+  printerList,
+  setPrinterList,
+  documentList,
+  setDocumentList,
+  selectedOfficer,
+  setSelectedOfficer,
+  selectedPrinter,
+  setSelectedPrinter
+}) => {
   const [matchingDocs, setMatchingDocs] = useState([]);
   const [maintainHis, setMaintainHis] = useState([])
   const [refillHis, setRefillHis] = useState([]);
 
-
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        if(selectedPrinter) {
-          const history = selectedPrinter.history || [];
-          const allDocs = (await axios.get(`http://localhost:3000/Document`)).data;
-          const matchings = allDocs.filter((doc) => 
-            history.some((item) => item === doc.id) 
-          );
-          setMatchingDocs(matchings);
-          setMaintainHis(selectedPrinter.maintains);
-          setRefillHis(selectedPrinter.refillPaper);
-        }
-      } catch (err) {
-        console.error("Error fetching officer data:", err);
-      }
-    };
-    fetchData();
-  }, [selectedPrinter]);
+    if(selectedPrinter) {
+      const history = selectedPrinter.history || [];
+      const matchings = documentList.filter((doc) => 
+        history.some((item) => item === doc.id) 
+      );
+      setMatchingDocs(matchings);
+      setMaintainHis(selectedPrinter.maintains);
+      setRefillHis(selectedPrinter.refillPaper);
+    }
+    // const fetchData = async () => {
+    //   try {
+    //     if(selectedPrinter) {
+    //       const history = selectedPrinter.history || [];
+    //       const allDocs = (await axios.get(`http://localhost:3000/Document`)).data;
+    //       const matchings = allDocs.filter((doc) => 
+    //         history.some((item) => item === doc.id) 
+    //       );
+    //       setMatchingDocs(matchings);
+    //       setMaintainHis(selectedPrinter.maintains);
+    //       setRefillHis(selectedPrinter.refillPaper);
+    //     }
+    //   } catch (err) {
+    //     console.error("Error fetching officer data:", err);
+    //   }
+    // };
+    // fetchData();
+  }, [selectedPrinter, documentList]);
 
   return (
-    <div>
+    <div className="overflow-hidden">
       <div className="flex items-start ml-[100px] mt-[30px] w-full h-full"> 
         <div className=" mt-[17px] mr-[10px]">
           <span className="text-[18px] font-inter font-semibold"> Employee List</span>
@@ -39,7 +58,16 @@ const OfficerReport = () => {
           <span className="text-[18px] ml-[66px] font-inter font-semibold">Printer List</span>
 
           <div className="mt-[15px] w-[400px] h-[500px]">
-            <List onSelectedPrinter = {setSelectedPrinter}/>
+            <List 
+              officerList={officerList}
+              setOfficerList={setOfficerList}
+              printerList={printerList}
+              setPrinterList={setPrinterList}
+              selectedOfficer={selectedOfficer}
+              setSelectedOfficer={setSelectedOfficer}
+              selectedPrinter={selectedPrinter}
+              setSelectedPrinter={setSelectedPrinter}
+            />
           </div>
         </div>
       <div className =" w-[850px] ml-[5px]"> 
