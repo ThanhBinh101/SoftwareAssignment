@@ -10,10 +10,10 @@ const { deletePrinter, addPrinter } = require('./controllers/printer');
 const { addPurchase } = require('./controllers/students');
 
 app.use(express.json());
-app.use(cors({ origin: 'http://localhost:5174', }));
+app.use(cors());
 
-app.delete('/Printer/:id', deletePrinter);
 app.post('/Printer', addPrinter);
+app.delete('/Printer/:id', deletePrinter);
 
 app.post('/Student/', addPurchase)
 

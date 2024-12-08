@@ -12,6 +12,7 @@ const AddPrinterModal = ({ onClose }) => {
     e.preventDefault();
     setLoading(true);
     setError("");
+    console.log({id, location, officerID})
 
     try {
       const response = await axios.post("http://localhost:8386/Printer", {
@@ -20,10 +21,11 @@ const AddPrinterModal = ({ onClose }) => {
         officerID: officerID,
         status: "Off",
         paper: 0,
-        queue: null,
-        maintains: null,
-        refillPaper: null
+        queue: [],
+        maintains: [],
+        refillPaper: []
       });
+
       console.log("Printer added:", response.data);
       onClose();
     } catch (err) {
