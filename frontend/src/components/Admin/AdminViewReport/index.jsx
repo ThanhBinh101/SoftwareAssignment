@@ -163,6 +163,7 @@ const ViewReport = () => {
 
       setFilteredStudentList(tempStudentList);
       setFilteredDocumentList(filterDateDocumentList);
+      setFilteredPrinterList(filteredPrinterList);
     }
 
     if (searchValue) {
