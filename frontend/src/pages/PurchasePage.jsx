@@ -6,7 +6,7 @@ const PurchasePage = () => {
     <div className="px-10 pt-10">
       <div className="flex gap-[120px] items-start">
         <PurchaseInformation />
-        <PurchasePayment />
+        <PurchasePayment/>
       </div>
     </div>
   );

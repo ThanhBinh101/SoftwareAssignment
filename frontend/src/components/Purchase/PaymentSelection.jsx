@@ -11,7 +11,7 @@ const PaymentSelection = () => {
 
   return (
     <div className="mb-[60px]">
-      <Title title={"Choose pay amount"} />
+      <Title title={"Choose pay amount"} />  
 
       <div className="grid grid-cols-3 gap-[50px]">
         {PRICE_AMOUNT.map((price) => (

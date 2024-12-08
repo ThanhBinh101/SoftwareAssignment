@@ -8,7 +8,7 @@ const deletePrinter = (req, res) => {
       if (err) {
         console.error('Error reading db.json:', err);
         return res.status(500).json({ message: 'Server error' });
-      }
+      } 
   
       try {
         // Parse the JSON data
@@ -46,13 +46,12 @@ const deletePrinter = (req, res) => {
 }
 
 const addPrinter = async (req, res) => {
-    const { id, location, officerID, status, paper, queue, maintains, refillPaper } = req.body;
+  const { id, location, officerID, status, paper, queue, maintains, refillPaper } = req.body;
   
-    // Ensure required fields are present
-    if (!id || !location || !officerID) {
-      return res.status(400).json({ message: `Missing required fields: id, location, officerID` });
-    }
-  
+  // Ensure required fields are present
+  if (!id || !location || !officerID) {
+    return res.status(400).json({ message: `Missing required fields: id, location, officerID` });
+  }
     // Create a new printer object
     const newPrinter = {
       id: id,
