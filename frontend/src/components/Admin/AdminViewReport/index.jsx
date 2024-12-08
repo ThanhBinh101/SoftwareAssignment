@@ -114,8 +114,8 @@ const ViewReport = () => {
     const searchValue = searchBar;
     const startDateValue = startDate;
     const endDateValue = endDate;
-    
-    console.log({searchValue, startDateValue, endDateValue});
+
+    console.log({ searchValue, startDateValue, endDateValue });
 
     if (startDateValue && endDateValue) {
       const start = new Date(startDateValue);
@@ -139,12 +139,12 @@ const ViewReport = () => {
         printer.maintains = printer.maintains.filter((item) => {
           const maintainDate = new Date(item.date);
           return maintainDate >= start && maintainDate <= end;
-        })
+        });
 
         printer.refillPaper = printer.refillPaper.filter((item) => {
           const refillDate = new Date(item.date);
           return refillDate >= start && refillDate <= end;
-        })
+        });
       }
 
       if (selectedPrinter) {
@@ -163,7 +163,25 @@ const ViewReport = () => {
 
       setFilteredStudentList(tempStudentList);
       setFilteredDocumentList(filterDateDocumentList);
-      setFilteredPrinterList(filteredPrinterList);
+      setFilteredPrinterList(tempPrinterList);
+    } else {
+      if (selectedPrinter) {
+        const tempSelectedPrinter = printerList.find(
+          (item) => item.id === selectedPrinter.id,
+        );
+        setSelectedPrinter(tempSelectedPrinter);
+      }
+
+      if (selectedStudent) {
+        const tempSelectedStudent = studentList.find(
+          (item) => item.id === selectedStudent.id,
+        );
+        setSelectedStudent(tempSelectedStudent);
+      }
+
+      setFilteredDocumentList(documentList);
+      setFilteredStudentList(studentList);
+      setFilteredPrinterList(printerList);
     }
 
     if (searchValue) {
@@ -251,7 +269,10 @@ const ViewReport = () => {
             name="endDate"
             className="ml-[10px] h-[48px] w-[180px] rounded-[16px] border border-[#A68BC1] bg-[#A68BC133] p-2"
           />
-          <button type="submit" className="ml-[20px] h-[48px] w-[180px] rounded-[16px] border border-[#A68BC1] bg-[#A68BC133] text-[18px]">
+          <button
+            type="submit"
+            className="ml-[20px] h-[48px] w-[180px] rounded-[16px] border border-[#A68BC1] bg-[#A68BC133] text-[18px]"
+          >
             Search
           </button>
         </form>
