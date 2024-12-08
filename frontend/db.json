@@ -45,12 +45,12 @@
       "availablePaper": "10",
       "purchases": [
         {
-          "date": "2004-09-30",
+          "date": "2024-09-30",
           "paper": 100,
           "amount": 10000
         },
         {
-          "date": "2004-10-30",
+          "date": "2024-10-30",
           "paper": 100,
           "amount": 10000
         }
@@ -62,8 +62,8 @@
       "id": "kfjq7d4xjxe8wg4t91",
       "name": "HelloWorld.pdf",
       "status": "printing",
-      "printDate": "2004-10-01",
-      "finishDate": "2004-10-01",
+      "printDate": "2024-10-01",
+      "finishDate": "2024-10-01",
       "paper": 10,
       "studentID": "2252083"
     }
@@ -77,13 +77,13 @@
       "queue": [],
       "maintains": [
         {
-          "date": "2004-10-01",
+          "date": "2024-10-01",
           "status": "Im not oke kinchana"
         }
       ],
       "refillPaper": [
         {
-          "date": "2004-10-01",
+          "date": "2024-10-01",
           "amount": 10
         }
       ],
@@ -100,13 +100,13 @@
       "queue": [],
       "maintains": [
         {
-          "date": "2004-10-01",
+          "date": "2024-10-01",
           "status": "Im not oke kinchana"
         }
       ],
       "refillPaper": [
         {
-          "date": "2004-10-01",
+          "date": "2024-10-01",
           "amount": 10
         }
       ]
@@ -119,13 +119,13 @@
       "queue": [],
       "maintains": [
         {
-          "date": "2004-10-01",
+          "date": "2024-10-01",
           "status": "Im not oke kinchana"
         }
       ],
       "refillPaper": [
         {
-          "date": "2004-10-01",
+          "date": "2024-10-01",
           "amount": 10
         }
       ]
@@ -135,63 +135,36 @@
       "location": "1",
       "status": "Off",
       "paper": 0,
-      "queue": null,
-      "maintains": null,
-      "refillPaper": null
+      "queue": [],
+      "maintains": [],
+      "refillPaper": []
     },
     {
       "id": "2",
       "location": "1",
       "status": "Off",
       "paper": 0,
-      "queue": null,
-      "maintains": null,
-      "refillPaper": null
+      "queue": [],
+      "maintains": [],
+      "refillPaper": []
     },
     {
       "id": "3",
       "location": "3",
       "status": "Off",
       "paper": 0,
-      "queue": null,
-      "maintains": null,
-      "refillPaper": null
+      "queue": [],
+      "maintains": [],
+      "refillPaper": []
     },
     {
-      "id": "1002",
-      "location": "5",
-      "status": "Off",
-      "paper": 0,
-      "queue": null,
-      "maintains": null,
-      "refillPaper": null
-    },
-    {
-      "id": "6",
+      "id": "11010",
       "location": "1",
       "status": "Off",
       "paper": 0,
-      "queue": null,
-      "maintains": null,
-      "refillPaper": null
-    },
-    {
-      "id": "4",
-      "location": "1",
-      "status": "Off",
-      "paper": 0,
-      "queue": null,
-      "maintains": null,
-      "refillPaper": null
-    },
-    {
-      "id": "405B8.1",
-      "location": "405B8",
-      "status": "Off",
-      "paper": 0,
-      "queue": null,
-      "maintains": null,
-      "refillPaper": null
+      "queue": [],
+      "maintains": [],
+      "refillPaper": []
     }
   ],
   "Officer": [
@@ -201,9 +174,8 @@
       "password": "1",
       "printers": [
         "306B1.3",
-        "6",
-        "4",
-        "405B8.1"
+        "405B8.1",
+        "11010"
       ]
     },
     {
@@ -212,8 +184,7 @@
       "password": "1",
       "printers": [
         "306B1.1",
-        "306B1.2",
-        "1002"
+        "306B1.2"
       ]
     }
   ],
