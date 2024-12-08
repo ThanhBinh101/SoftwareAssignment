@@ -11,25 +11,16 @@ const deletePrinter = (req, res) => {
       } 
   
       try {
-        // Parse the JSON data
         const db = JSON.parse(data);
-  
-        // Ensure `Printer` key exists
         if (!db.Printer || !Array.isArray(db.Printer)) {
           return res.status(400).json({ message: 'Invalid database structure' });
         }
-  
-        // Find the printer by ID
         const printerIndex = db.Printer.findIndex((printer) => printer.id === printerId);
   
         if (printerIndex === -1) {
           return res.status(404).json({ message: 'Printer not found' });
         }
-  
-        // Remove the printer
         db.Printer.splice(printerIndex, 1);
-  
-        // Write updated data back to the file
         fs.writeFile(filePath, JSON.stringify(db, null, 2), (writeErr) => {
           if (writeErr) {
             console.error('Error writing to db.json:', writeErr);
@@ -64,32 +55,19 @@ const addPrinter = async (req, res) => {
     };
   
     try {
-      // Read the file
       const data = await fs.readFile(filePath, 'utf8');
       const db = JSON.parse(data);
-  
-      // Ensure `Printer` key exists in the database
       if (!db.Printer || !Array.isArray(db.Printer)) {
         db.Printer = [];
       }
-  
-      // Check for duplicate ID in printers
       if (db.Printer.some((printer) => printer.id === id)) {
         return res.status(409).json({ message: 'Printer ID already exists.' });
       }
-  
-      // Find the officer by officerID
       const officer = db.Officer.find((officer) => officer.id === officerID);
       if (officer) {
-        // Add the new printer to the Printer array
         db.Printer.push(newPrinter);
-        
-        // Add the printer ID to the officer's printers array
         officer.printers.push(newPrinter.id);
-  
-        // Write updated data back to the file
         await fs.writeFile(filePath, JSON.stringify(db, null, 2));
-  
         return res.status(201).json({ message: 'Printer added successfully', newPrinter });
       } else {
         return res.status(409).json({ message: 'Officer ID does not exist.' });

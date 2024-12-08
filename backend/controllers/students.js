@@ -5,7 +5,6 @@ const filePath = path.join(__dirname, '../../frontend/db.json');
 const addPurchase = async (req, res) => {
     const { date, paper, amount , id} = req.body;
 
-    // Ensure all required fields are provided
     if (!date || !amount || !paper) {
         return res.status(400).json({ message: 'Missing required fields' });
     }
@@ -30,10 +29,7 @@ const addPurchase = async (req, res) => {
             return res.status(404).json({ message: `Student not found ${id} ${db.Student}` });
         }
 
-        // Add the new purchase to the student's purchases array
         student.purchases.push(newPurchase);
-
-        // Save the updated students data back to the file
         await fs.writeFile(filePath, JSON.stringify(db, null, 2));
 
         res.status(200).json({ message: 'Purchase added successfully', student });
