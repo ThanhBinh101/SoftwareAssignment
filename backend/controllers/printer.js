@@ -16,14 +16,14 @@ const deletePrinter = async (req, res) => {
 
     // Find the printer by ID
     const printerIndex = db.Printer.findIndex((printer) => printer.id === printerId);
-    
-    const officerPrinterOwner = db.Officer.find((officer) => officer.printers.includes(printerId));
-
-    officerPrinterOwner.printers = officerPrinterOwner.printers.filter((printer) => printer !== printerId);
 
     if (printerIndex === -1) {
       return res.status(404).json({ message: 'Printer not found' });
     }
+    
+    const officerPrinterOwner = db.Officer.find((officer) => officer.printers.includes(printerId));
+
+    officerPrinterOwner.printers = officerPrinterOwner.printers.filter((printer) => printer !== printerId);
 
     // Remove the printer
     db.Printer.splice(printerIndex, 1);
