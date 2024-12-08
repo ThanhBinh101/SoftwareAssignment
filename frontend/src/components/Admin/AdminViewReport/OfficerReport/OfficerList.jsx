@@ -1,50 +1,73 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+/* eslint-disable react/prop-types */
+import { useState, useEffect } from 'react';
+// import axios from 'axios';
 import DeletePrinter from "../../../PopUp/DeletePrinter"
 
-const List = ({ onSelectedPrinter }) => {
-  const [selectedOfficer, setSelectedOfficer] = useState("2345678");
-  const [selectedPrinter, setSelectedPrinter] = useState(null);
+const List = ({ 
+  officerList,
+  setOfficerList,
+  printerList,
+  setPrinterList,
+  selectedOfficer,
+  setSelectedOfficer,
+  selectedPrinter,
+  setSelectedPrinter 
+}) => {
+  // const [selectedOfficer, setSelectedOfficer] = useState("2345678");
+  // const [selectedPrinter, setSelectedPrinter] = useState(null);
   const [deleteModalShow, setDeleteModalShow] = useState(false);
   const [printerToDelete, setPrinterToDelete] = useState("");
-  const [officerData, setOfficerData] = useState([]);
+  // const [officerData, setOfficerData] = useState([]);
   const [printerData, setPrinterData] = useState([]);
 
   // Fetch officer data
-  useEffect(() => {
-    const fetchOfficerData = async () => {
-      try {
-        const response = await axios.get("http://localhost:3000/Officer");
-        setOfficerData(response.data);
-      } catch (err) {
-        console.error("Error fetching officer data:", err);
-      }
-    };
-    fetchOfficerData();
-  }, []);
+  // useEffect(() => {
+  //   const fetchOfficerData = async () => {
+  //     try {
+  //       const response = await axios.get("http://localhost:3000/Officer");
+  //       setOfficerData(response.data);
+  //     } catch (err) {
+  //       console.error("Error fetching officer data:", err);
+  //     }
+  //   };
+  //   fetchOfficerData();
+  // }, []);
 
   // Fetch printer data for the selected officer
   useEffect(() => {
-    const fetchPrinterData = async () => {
-      if (selectedOfficer) {
-        try {
-          const allPrinters = (await axios.get("http://localhost:3000/Printer")).data;
-          if(selectedOfficer.printers) {
-              const filteredPrinters = allPrinters.filter((printer) =>
-              selectedOfficer.printers.includes(printer.id)
-            );
-            setPrinterData(filteredPrinters);
-          }
-
-        } catch (err) {
-          console.error("Error fetching printer data:", err);
+    if (selectedOfficer) {
+      try {
+        if (selectedOfficer.printers) {
+          const filteredPrinters = printerList.filter((printer) => selectedOfficer.printers.includes(printer.id));
+          setPrinterData(filteredPrinters);
         }
-      } else {
-        setPrinterData([]);
+      } catch (error) {
+        console.log(error);
       }
-    };
-    fetchPrinterData();
-  }, [selectedOfficer]);
+    } else {
+      setPrinterData([]);
+    }
+
+    // const fetchPrinterData = async () => {
+    //   if (selectedOfficer) {
+    //     try {
+    //       const allPrinters = (await axios.get("http://localhost:3000/Printer")).data;
+    //       if(selectedOfficer.printers) {
+    //           const filteredPrinters = allPrinters.filter((printer) =>
+    //           selectedOfficer.printers.includes(printer.id)
+    //         );
+    //         setPrinterData(filteredPrinters);
+    //       }
+
+    //     } catch (err) {
+    //       console.error("Error fetching printer data:", err);
+    //     }
+    //   } else {
+    //     setPrinterData([]);
+    //   }
+    // };
+    // fetchPrinterData();
+  }, [selectedOfficer, printerList]);
 
   // Select an officer
   const handleSelectOfficer = (officer) => {
@@ -54,8 +77,9 @@ const List = ({ onSelectedPrinter }) => {
 
   // Select a printer
   const handleSelectPrinter = (printer) => {
-    setSelectedPrinter((prevSelected) => (prevSelected === printer ? null : printer));
-    onSelectedPrinter(printer);
+    // setSelectedPrinter((prevSelected) => (prevSelected === printer ? null : printer));
+    setSelectedPrinter(printer);
+    // onSelectedPrinter(printer);
   };
 
   // Delete a printer
@@ -64,11 +88,11 @@ const List = ({ onSelectedPrinter }) => {
     setDeleteModalShow(true);
   };
 
-  const handleDeleteConfirm = () => {
-    console.log(`Deleted printer: ${printerToDelete.id}`);
-    setDeleteModalShow(false);
-    // Additional logic to delete the printer can go here
-  };
+  // const handleDeleteConfirm = () => {
+  //   console.log(`Deleted printer: ${printerToDelete.id}`);
+  //   setDeleteModalShow(false);
+  //   // Additional logic to delete the printer can go here
+  // };
 
   const handleDeleteCancel = () => {
     setDeleteModalShow(false);
@@ -78,7 +102,7 @@ const List = ({ onSelectedPrinter }) => {
     <div className="flex space-x-4">
       {/* Officer List */}
       <div className="space-y-[5px] max-h-[500px] overflow-y-auto w-[170px]">
-        {officerData.map((officer, index) => (
+        {officerList && officerList.map((officer, index) => (
           <div key={index}>
             <div
               className={`flex items-center space-x-2 cursor-pointer w-[170px] text-[18px] h-[60px] rounded-tl-[8px] rounded-bl-[8px] rounded-tr-[30px] rounded-br-[30px] ${
@@ -88,7 +112,7 @@ const List = ({ onSelectedPrinter }) => {
             >
               <span className="ml-[10px]">{officer.id}</span>
             </div>
-            {index < officerData.length - 1 && (
+            {index < officerList.length - 1 && (
               <hr className="border-t border-[#F7BCD6] mt-[5px] w-[147px]" />
             )}
           </div>
@@ -99,11 +123,11 @@ const List = ({ onSelectedPrinter }) => {
       <div className="space-y-[5px] max-h-[500px] overflow-y-auto w-[170px]">
         {selectedOfficer && (
           <>
-            {printerData.map((printer, printerIndex) => (
+            { printerData.map((printer, printerIndex) => (
               <div key={printerIndex}>
                 <div
                   className={`flex items-center space-x-2 cursor-pointer w-full text-[18px] h-[60px] rounded-tl-[8px] rounded-bl-[8px] rounded-tr-[30px] rounded-br-[30px] ${
-                    selectedPrinter === printer ? "bg-[#F7BCD633] text-[#A68BC1] font-bold" : "text-black font-bold hover:bg-[#A68BC133] hover:text-black"
+                    selectedPrinter?.id === printer.id ? "bg-[#F7BCD633] text-[#A68BC1] font-bold" : "text-black font-bold hover:bg-[#A68BC133] hover:text-black"
                   }`}
                   onClick={() => handleSelectPrinter(printer)}
                 >

@@ -7,7 +7,7 @@ const StudentButton = ({ isSelected, onClick }) => {
     <div
       className={`flex items-center justify-center w-[120px] h-[48px] border-2 border-[#A68BC1] rounded-[16px] text-[18px] ${
         isSelected ? "bg-[#A68BC1] text-white" : "bg-[#FFFFFF] text-[#A68BC1]"
-      }`}
+      } student-button`}
       onClick={onClick}
     >
       {BUTTON_CHOOSE_STUDENT.map((button) => (

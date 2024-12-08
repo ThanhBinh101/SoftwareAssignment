@@ -1,51 +1,79 @@
+/* eslint-disable react/prop-types */
 import Table from "../../../Officer/Table"
 import List from "./StudentList"
-import React, { useState, useEffect } from 'react';
-import axios from "axios";
+import { useState, useEffect } from 'react';
+// import axios from "axios";
 
-const StudentReport = () => {
-  const [selectedStudent, setSelectedStudent] = useState(null);
+const StudentReport = ({
+  studentList,
+  setStudentList,
+  documentList,
+  setDocumentList,
+  selectedStudent,
+  setSelectedStudent
+}) => {
+  // const [selectedStudent, setSelectedStudent] = useState(null);
   const [matchDocs, setMatchDocs] = useState(null);
-  let purchases = null;
-  console.log(selectedStudent);
-  if(selectedStudent) {
-    purchases = selectedStudent.purchases;
-  }
+  const [purchases, setPurchases] = useState(null);
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(`http://localhost:3000/Document`);
-        console.log("Response Data:", response.data); // Debugging
-        const allDocs = response.data;
-  
-        if (Array.isArray(allDocs)) {
-          if (selectedStudent) {
-            const matchDocs = allDocs.filter((doc) => doc.studentID === selectedStudent.id);
-            setMatchDocs(matchDocs);
-          } else {
-            setMatchDocs([]); // Clear if no student is selected
-          }
-        } else {
-          console.error("Expected an array, but got:", allDocs);
-          setMatchDocs([]); // Clear matchDocs if data is not an array
-        }
-      } catch (err) {
-        console.error("Error fetching data:", err);
+    if (selectedStudent) {
+      const matchPurchases = studentList.find((item) => item.id === selectedStudent.id);
+      setPurchases(matchPurchases.purchases);
+    }
+  }, [selectedStudent, purchases, studentList]);
+
+  useEffect(() => {
+    if (Array.isArray(documentList)) {
+      if (selectedStudent) {
+        const matchDocs = documentList.filter((doc) => doc.studentID === selectedStudent.id);
+        setMatchDocs(matchDocs);
+      } else {
+        setMatchDocs([]); // Clear if no student is selected
       }
-    };
+    } else {
+      console.error("Expected an array, but got:", documentList);
+      setMatchDocs([]); // Clear matchDocs if data is not an array
+    }
+
+    // const fetchData = async () => {
+    //   try {
+    //     const response = await axios.get(`http://localhost:3000/Document`);
+    //     console.log("Response Data:", response.data); // Debugging
+    //     const allDocs = response.data;
   
-    fetchData();
-  }, [selectedStudent]);
+    //     if (Array.isArray(allDocs)) {
+    //       if (selectedStudent) {
+    //         const matchDocs = allDocs.filter((doc) => doc.studentID === selectedStudent.id);
+    //         setMatchDocs(matchDocs);
+    //       } else {
+    //         setMatchDocs([]); // Clear if no student is selected
+    //       }
+    //     } else {
+    //       console.error("Expected an array, but got:", allDocs);
+    //       setMatchDocs([]); // Clear matchDocs if data is not an array
+    //     }
+    //   } catch (err) {
+    //     console.error("Error fetching data:", err);
+    //   }
+    // };
+  
+    // fetchData();
+  }, [selectedStudent, documentList]);
   
 
   return (
-    <div>
+    <div className="overflow-hidden">
       <div className="flex items-start ml-[100px] mt-[30px] w-full h-full"> 
         <div className="mt-[17px] mr-[50px]">
           <span className="text-[18px] font-inter font-semibold"> Student List</span>
           <div className="mt-[15px] w-[170px] h-[500px]">
-            <List onSelectStudent={setSelectedStudent}/>
+            <List 
+              studentList={studentList}
+              setStudentList={setStudentList}
+              selectedStudent={selectedStudent}
+              setSelectedStudent={setSelectedStudent}
+            />
           </div>
         </div>
         
