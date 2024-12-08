@@ -2,50 +2,44 @@ const fs = require('fs/promises');
 const path = require('path');
 const filePath = path.join(__dirname, '../../frontend/db.json');
 
-const deletePrinter = (req, res) => {
-    const printerId = req.params.id;
-    fs.readFile(filePath, 'utf8', (err, data) => {
-      if (err) {
-        console.error('Error reading db.json:', err);
-        return res.status(500).json({ message: 'Server error' });
-      } 
-  
-      try {
-        // Parse the JSON data
-        const db = JSON.parse(data);
-  
-        // Ensure `Printer` key exists
-        if (!db.Printer || !Array.isArray(db.Printer)) {
-          return res.status(400).json({ message: 'Invalid database structure' });
-        }
-  
-        // Find the printer by ID
-        const printerIndex = db.Printer.findIndex((printer) => printer.id === printerId);
-  
-        if (printerIndex === -1) {
-          return res.status(404).json({ message: 'Printer not found' });
-        }
-  
-        // Remove the printer
-        db.Printer.splice(printerIndex, 1);
-  
-        // Write updated data back to the file
-        fs.writeFile(filePath, JSON.stringify(db, null, 2), (writeErr) => {
-          if (writeErr) {
-            console.error('Error writing to db.json:', writeErr);
-            return res.status(500).json({ message: 'Server error' });
-          }
-  
-          res.status(200).json({ message: `Printer ${printerId} deleted successfully` });
-        });
-      } catch (parseError) {
-        console.error('Error parsing db.json:', parseError);
-        return res.status(500).json({ message: 'Server error' });
-      }
-    });
+const deletePrinter = async (req, res) => {
+  const printerId = req.params.id;
+  const data = await fs.readFile(filePath, 'utf8');
+  try {
+    // Parse the JSON data
+    const db = JSON.parse(data);
+
+    // Ensure `Printer` key exists
+    if (!db.Printer || !Array.isArray(db.Printer)) {
+      return res.status(400).json({ message: 'Invalid database structure' });
+    }
+
+    // Find the printer by ID
+    const printerIndex = db.Printer.findIndex((printer) => printer.id === printerId);
+    
+    const officerPrinterOwner = db.Officer.find((officer) => officer.printers.includes(printerId));
+
+    officerPrinterOwner.printers = officerPrinterOwner.printers.filter((printer) => printer !== printerId);
+
+    if (printerIndex === -1) {
+      return res.status(404).json({ message: 'Printer not found' });
+    }
+
+    // Remove the printer
+    db.Printer.splice(printerIndex, 1);
+
+    // Write updated data back to the file
+    await fs.writeFile(filePath, JSON.stringify(db, null, 2));
+    res.status(200).json({ message: `Printer ${printerId} deleted successfully` });
+    return;
+  } catch (parseError) {
+    console.error('Error parsing db.json:', parseError);
+    return res.status(500).json({ message: 'Server error' });
+  }
 }
 
 const addPrinter = async (req, res) => {
+
   const { id, location, officerID, status, paper, queue, maintains, refillPaper } = req.body;
   
   // Ensure required fields are present
