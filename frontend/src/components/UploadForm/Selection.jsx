@@ -5,7 +5,7 @@ const Selection = ({ id, title, options, state, setState }) => {
 
   return (
     <div className="flex">
-      <label htmlFor="printer_id" className="flex-1">
+      <label htmlFor={id} className="flex-1">
         {title}
       </label>
       <select
@@ -16,14 +16,14 @@ const Selection = ({ id, title, options, state, setState }) => {
         onChange={handleChange}
       >
         <option value="auto">Auto</option>
-        {options.map((option) => (
-          <option key={option.value} id="">
-            {option.content}
+        {(options || []).map((option, index) => (
+          <option key={index} value={option.id}>
+            {option.id}
           </option>
         ))}
       </select>
     </div>
   );
 };
+
 export default Selection;
- 

@@ -20,6 +20,7 @@ export const AppProvider = ({ children }) => {
   const [paperSize, setPaperSize] = useState("A4");
   const [orientation, setOrientation] = useState("portrait");
   const [fileUpload, setFileUpload] = useState(null);
+  const [listPrinter, setListPrinter] = useState([]);
 
   //End Upload Page State
 
@@ -68,6 +69,8 @@ export const AppProvider = ({ children }) => {
         setPopupMessage,
         price,
         setPrice,
+        listPrinter,
+        setListPrinter,
       }}
     >
       {children}

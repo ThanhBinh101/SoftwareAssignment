@@ -4,15 +4,15 @@ import { IoCloudUploadOutline } from "react-icons/io5";
 import { FaRegFolderOpen } from "react-icons/fa";
 import { useAppContext } from "../../hooks/useAppContext";
 import { FaRegFileAlt } from "react-icons/fa";
-import { WARNING_FILE } from "../../libs/constant";
+// import { WARNING_FILE } from "../../libs/constant";
 
 const FileUpload = () => {
   const {
     fileUpload,
     setFileUpload,
-    setIsOpenPopup,
-    setPopupType,
-    setPopupMessage,
+    // setIsOpenPopup,
+    // setPopupType,
+    // setPopupMessage,
   } = useAppContext();
 
   const onDrop = useCallback(
@@ -24,9 +24,9 @@ const FileUpload = () => {
         setFileUpload(acceptedFiles[0]);
       } else {
         // Popup Error
-        setIsOpenPopup(true);
-        setPopupType("error");
-        setPopupMessage(WARNING_FILE);
+        // setIsOpenPopup(true);
+        // setPopupType("error");
+        // setPopupMessage(WARNING_FILE);
       }
     },
     [setFileUpload],
@@ -34,9 +34,9 @@ const FileUpload = () => {
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop,
     // Config accept file
-    accept: {
-      "image/png": [".png"],
-    },
+    // accept: {
+    //   "image/png": [".png"],
+    // },
   });
 
   return (
