@@ -23,7 +23,7 @@ const UserOverview = ({student}) => {
 
           <WaitPrintingTable />
 
-          <UserOverviewButtonList />
+          <UserOverviewButtonList id={student.id}/>
 
           <UserRefillAnnoucement
             remainingDay={10}

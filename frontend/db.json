@@ -145,6 +145,24 @@
       "queue": null,
       "maintains": null,
       "refillPaper": null
+    },
+    {
+      "id": "6",
+      "location": "1",
+      "status": "Off",
+      "paper": 0,
+      "queue": null,
+      "maintains": null,
+      "refillPaper": null
+    },
+    {
+      "id": "4",
+      "location": "1",
+      "status": "Off",
+      "paper": 0,
+      "queue": null,
+      "maintains": null,
+      "refillPaper": null
     }
   ],
   "Officer": [
@@ -153,7 +171,9 @@
       "name": "Eroheta",
       "password": "1",
       "printers": [
-        "306B1.3"
+        "306B1.3",
+        "6",
+        "4"
       ]
     },
     {
