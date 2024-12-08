@@ -59,12 +59,10 @@ const ViewReport = () => {
           const history = selectedPrinter.history || [];  // Store the fetched history data
   
           const allDocs = (await axios.get(`http://localhost:3000/Document`)).data;
-  
-          // Assuming history contains document IDs that can be matched with the documents
           const matchings = allDocs.filter((doc) => 
-            history.some((item) => item === doc.id)  // Compare item.documentID with doc.id
+            history.some((item) => item === doc.id)
           );
-          setMatchingDocs(matchings);  // Set the filtered documents
+          setMatchingDocs(matchings);
           setMaintainHis(selectedPrinter.maintains);
           setRefillHis(selectedPrinter.refillPaper);
         } catch (err) {
@@ -72,7 +70,6 @@ const ViewReport = () => {
         }
       }
     };
-  
     fetchPrinterHistory();
   }, [selectedPrinter]);
   
