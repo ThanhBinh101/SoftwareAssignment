@@ -10,7 +10,7 @@ const { deletePrinter, addPrinter } = require('./controllers/printer');
 const { addPurchase } = require('./controllers/students');
 
 app.use(express.json());
-app.use(cors({ origin: 'http://localhost:5174', }));
+app.use(cors({ origin: 'http://localhost:5173', }));
 
 app.delete('/Printer/:id', deletePrinter);
 app.post('/Printer', addPrinter);

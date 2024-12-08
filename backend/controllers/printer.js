@@ -58,9 +58,9 @@ const addPrinter = async (req, res) => {
       location: location,
       status: status || 'Off',
       paper: paper || 0,
-      queue: queue || null,
-      maintains: maintains || null,
-      refillPaper: refillPaper || null,
+      queue: queue || [],
+      maintains: maintains || [],
+      refillPaper: refillPaper || [],
     };
   
     try {

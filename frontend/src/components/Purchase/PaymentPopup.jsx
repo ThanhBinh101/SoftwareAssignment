@@ -1,5 +1,5 @@
 import { useAppContext } from "../../hooks/useAppContext";
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Button from "../Button";
 import Title from "../Title";
 import axios from "axios";
@@ -24,7 +24,7 @@ const PaymentPopup = () => {
     const data = {
       date: new Date().toISOString().split("T")[0],  // Get today's date in YYYY-MM-DD format
       amount: price,  // Assuming price is set in the component
-      paper: price * 10,  // Calculate paper from price
+      paper: (price/5000) * 10,  // Calculate paper from price
       id: id
     };
   

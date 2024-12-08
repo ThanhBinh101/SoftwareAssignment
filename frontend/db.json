@@ -8,18 +8,33 @@
       "purchases": [
         {
           "date": "2004-09-30",
-          "paper": 100,
+          "paper": 20,
           "amount": 10000
         },
         {
           "date": "2004-10-30",
-          "paper": 100,
+          "paper": 20,
           "amount": 10000
         },
         {
           "date": "2024-12-08",
-          "paper": 1000000,
+          "paper": 200,
           "amount": 100000
+        },
+        {
+          "date": "2024-12-08",
+          "paper": 100,
+          "amount": 5000
+        },
+        {
+          "date": "2024-12-08",
+          "paper": 60,
+          "amount": 30000
+        },
+        {
+          "date": "2024-12-08",
+          "paper": 40,
+          "amount": 20000
         }
       ]
     },
@@ -168,6 +183,15 @@
       "queue": null,
       "maintains": null,
       "refillPaper": null
+    },
+    {
+      "id": "405B8.1",
+      "location": "405B8",
+      "status": "Off",
+      "paper": 0,
+      "queue": null,
+      "maintains": null,
+      "refillPaper": null
     }
   ],
   "Officer": [
@@ -178,7 +202,8 @@
       "printers": [
         "306B1.3",
         "6",
-        "4"
+        "4",
+        "405B8.1"
       ]
     },
     {
