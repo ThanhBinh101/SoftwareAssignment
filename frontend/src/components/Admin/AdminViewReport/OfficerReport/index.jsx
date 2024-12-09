@@ -99,7 +99,7 @@ const OfficerReport = ({
               maxHeight="278px"
             />
           </div>
-          <div className="mb-[20px] mt-[20px] h-[280px] w-full">
+          <div className="mb-[100px] mt-[150px] h-[280px] w-full">
             <Table
               className="p-3"
               title={

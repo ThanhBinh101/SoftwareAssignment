@@ -77,6 +77,26 @@
       "paper": 10,
       "studentID": "2252083",
       "printerID": "306B1.1"
+    },
+    {
+      "id": "doc1",
+      "name": "Minna no nihongo.pdf",
+      "status": "printing",
+      "printDate": "2024-12-09",
+      "finishDate": "2024-12-12",
+      "paper": 12,
+      "studentID": "2252081",
+      "printerID": "306B1.3"
+    },
+    {
+      "id": "doc2",
+      "name": "Đề thi môn CNPM (Bảo mật).pdf",
+      "status": "printing",
+      "printDate": "2024-12-05",
+      "finishDate": "2025-12-05",
+      "paper": 20,
+      "studentID": "2252081",
+      "printerID": "306B1.1"
     }
   ],
   "Printer": [
@@ -84,7 +104,7 @@
       "id": "306B1.1",
       "location": "306B1",
       "status": "Using",
-      "paper": 300,
+      "paper": 125,
       "queue": [],
       "nextMaintain": "2004-01-10",
       "maintains": [
@@ -101,32 +121,43 @@
         {
           "date": "2024-12-09",
           "amount": 12
+        },
+        {
+          "date": "2024-12-09",
+          "amount": 12,
+          "paper": 112
+        },
+        {
+          "date": "2024-12-09",
+          "amount": 13,
+          "paper": 125
         }
       ],
       "history": [
         "kfjq7d4xjxe8wg4t91",
-        "kfjq7d4xjxe8wg4t91"
+        "doc2"
       ],
-      "availablePaper": null
+      "availablePaper": 0
     },
     {
       "id": "306B1.2",
       "location": "306B1",
       "status": "On",
-      "paper": 36026,
+      "paper": 100,
       "queue": [],
       "nextMaintain": "2024-12-25",
       "maintains": [
         {
           "date": "2024-10-01",
-          "status": "Im not oke kinchana"
+          "status": "Fix can not run"
         },
         {
           "date": "2024-12-09",
-          "status": "afewf"
+          "status": "Fix can not connect to computer"
         }
       ],
-      "availablePaper": 1712,
+      "history": [],
+      "availablePaper": 100,
       "refillPaper": [
         {
           "date": "2024-10-01",
@@ -162,86 +193,23 @@
       "id": "306B1.3",
       "location": "306B1",
       "status": "On",
-      "paper": 2267,
+      "paper": 10,
       "queue": [],
       "nextMaintain": "2024-12-09",
       "maintains": [
         {
           "date": "2024-10-01",
           "status": "Im not oke kinchana"
-        },
-        {
-          "date": "2024-12-09",
-          "status": "hello"
-        },
-        {
-          "date": "2024-12-09",
-          "status": "hello"
-        },
-        {
-          "date": "2024-12-09",
-          "status": "hello"
-        },
-        {
-          "date": "2024-12-09",
-          "status": "tuan anh dep trai"
-        },
-        {
-          "date": "2024-12-09",
-          "status": "kinchana"
-        },
-        {
-          "date": "2024-12-09",
-          "status": "kinchana yo"
-        },
-        {
-          "date": "2024-12-09",
-          "status": "hello bro"
         }
+      ],
+      "history": [
+        "doc1"
       ],
       "availablePaper": 10,
       "refillPaper": [
         {
           "date": "2024-10-01",
           "amount": 10
-        },
-        {
-          "date": "2024-12-09",
-          "amount": 10
-        },
-        {
-          "date": "2024-12-09",
-          "amount": 20
-        },
-        {
-          "date": "2024-12-09",
-          "amount": 20
-        },
-        {
-          "date": "2024-12-09",
-          "amount": 30
-        },
-        {
-          "date": "2024-12-09",
-          "amount": 40
-        },
-        {
-          "date": "2024-12-09",
-          "amount": 50
-        },
-        {
-          "date": "2024-12-09",
-          "amount": 12
-        },
-        {
-          "date": "2024-12-09",
-          "amount": 20,
-          "paper": 2227
-        },
-        {
-          "date": "2024-12-09",
-          "amount": 40,
-          "paper": 2267
         }
       ]
     },
@@ -254,7 +222,8 @@
       "nextMaintain": "2004-01-10",
       "maintains": [],
       "availablePaper": 0,
-      "refillPaper": []
+      "refillPaper": [],
+      "history": []
     },
     {
       "id": "2",
@@ -265,7 +234,8 @@
       "nextMaintain": "2004-01-10",
       "maintains": [],
       "availablePaper": 0,
-      "refillPaper": []
+      "refillPaper": [],
+      "history": []
     },
     {
       "id": "3",
@@ -287,7 +257,8 @@
       "nextMaintain": "2004-01-10",
       "maintains": [],
       "availablePaper": 0,
-      "refillPaper": []
+      "refillPaper": [],
+      "history": []
     },
     {
       "id": "12",
@@ -298,13 +269,14 @@
       "nextMaintain": "2024-12-12",
       "maintains": [],
       "availablePaper": 0,
-      "refillPaper": []
+      "refillPaper": [],
+      "history": []
     }
   ],
   "Officer": [
     {
       "id": "8386",
-      "name": "Eroheta",
+      "name": "Le Van A",
       "password": "1",
       "printers": [
         "306B1.3",
@@ -314,7 +286,7 @@
     },
     {
       "id": "1002",
-      "name": "Beo",
+      "name": "Le Van B",
       "password": "1",
       "printers": [
         "306B1.1",
@@ -360,7 +332,7 @@
           "allow": true
         }
       ],
-      "nextRefill": "2004-10-01",
+      "nextRefill": "2024-12-20",
       "paper": 1,
       "price": 500,
       "refillAmount": 100

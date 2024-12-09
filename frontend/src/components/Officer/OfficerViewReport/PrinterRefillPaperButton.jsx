@@ -36,7 +36,7 @@ const PrinterRefillPaperButton = ({
       const data = response.data.newRefill;
 
       const currentPrinter = printerList.find((item) => item.id === id);
-      currentPrinter.refillPaper.push({ data: data.date, amount: data.amount });
+      currentPrinter.refillPaper.push({ date: data.date, amount: data.amount });
       currentPrinter.paper = data.paper;
 
       const currentPrinterChange = JSON.parse(JSON.stringify(currentPrinter));
