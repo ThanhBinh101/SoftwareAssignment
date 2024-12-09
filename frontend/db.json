@@ -109,11 +109,15 @@
       "status": "On",
       "paper": 300,
       "queue": [],
-      "nextMaintain": "2004-01-10",
+      "nextMaintain": "2024-12-25",
       "maintains": [
         {
           "date": "2024-10-01",
           "status": "Im not oke kinchana"
+        },
+        {
+          "date": "2024-12-09",
+          "status": "afewf"
         }
       ],
       "refillPaper": [
@@ -128,6 +132,10 @@
         {
           "date": "2024-12-09",
           "amount": 80
+        },
+        {
+          "date": "2024-12-09",
+          "amount": 1234
         }
       ]
     },

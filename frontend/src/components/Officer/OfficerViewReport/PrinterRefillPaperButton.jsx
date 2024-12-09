@@ -1,7 +1,7 @@
 import { BUTTON_REFILL_PAPER } from "../../../libs/constant";
 import Button from "../../Button";
 import React, { useState } from "react";
-import axios from "axios"; // Don't forget to import axios
+import axios from "axios";
 
 const PrinterRefillPaperButton = ({ id }) => {
   const [showPopUp, setshowPopup] = useState(false);
@@ -18,12 +18,11 @@ const PrinterRefillPaperButton = ({ id }) => {
     setLoading(true); // Set loading state
     try {
       const response = await axios.post(`http://localhost:8386/refillPaper/${id}`, { amount: parseInt(amount, 10) });
-
       console.log("Refill added:", response.data);
       setshowPopup(false);
       setError(""); // Clear error message
     } catch (err) {
-      setError("Error adding printer. Please try again.");
+      setError("Error adding Refill. Please try again.");
     } finally {
       setLoading(false);
     }

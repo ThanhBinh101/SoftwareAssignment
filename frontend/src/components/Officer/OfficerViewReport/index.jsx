@@ -289,21 +289,22 @@ const ViewReport = () => {
               </div>
               <div className="mb-[50px] mt-[150px]">
                 <div className="flex w-full flex-col items-center">
-                  <div className="mt-[25px] flex h-[52px] w-[245px] items-center justify-center rounded-[25px] bg-[#97D99D] text-xl">
-                  {selectedPrinter ? <PrinterRefillPaperButton id={selectedPrinter.id}/>: "Select Printer"}
-                  </div>
-                  <div className="mt-[25px] flex h-[52px] w-[245px] items-center justify-center rounded-[25px] bg-[#FEC8D8] text-xl">
-                    <PrinterMaintainButton onClick={handleMaintainClick} />
-                  </div>
+                  {selectedPrinter && <div className="mt-[25px] flex h-[52px] w-[245px] items-center justify-center rounded-[25px] bg-[#97D99D] text-xl">
+                  <PrinterRefillPaperButton id={selectedPrinter.id}/>
+                  </div>}
+                  
+                  {selectedPrinter && <div className="mt-[25px] flex h-[52px] w-[245px] items-center justify-center rounded-[25px] bg-[#FEC8D8] text-xl">
+                    <PrinterMaintainButton id={selectedPrinter.id} />
+                  </div>}
                   <MaintainPrinter
                     show={maintainModalShow}
                     onClose={handleMaintainClose}
                     printerCode={selectedPrinter}
                     time="10:00 AM ngày 2/11/2024"
                   />
-                  <div className="mt-[25px] flex h-[52px] w-[245px] items-center justify-center rounded-[25px] bg-[#A68BC1] text-xl">
+                  {selectedPrinter && <div className="mt-[25px] flex h-[52px] w-[245px] items-center justify-center rounded-[25px] bg-[#A68BC1] text-xl">
                     <TurnOffPrinterButton onClick={handleTurnOffPrinter} />
-                  </div>
+                  </div>}
                 </div>
               </div>
             </div>

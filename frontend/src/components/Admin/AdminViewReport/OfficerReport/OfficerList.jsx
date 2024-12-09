@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
 import { useState, useEffect } from "react";
-// import axios from 'axios';
 import DeletePrinter from "../../../PopUp/DeletePrinter";
 import { FaCheckCircle } from "react-icons/fa";
 import { FaCircleXmark } from "react-icons/fa6";
@@ -29,20 +28,6 @@ const List = ({
     confirmStatus: false,
   });
 
-  // Fetch officer data
-  // useEffect(() => {
-  //   const fetchOfficerData = async () => {
-  //     try {
-  //       const response = await axios.get("http://localhost:3000/Officer");
-  //       setOfficerData(response.data);
-  //     } catch (err) {
-  //       console.error("Error fetching officer data:", err);
-  //     }
-  //   };
-  //   fetchOfficerData();
-  // }, []);
-
-  // Fetch printer data for the selected officer
   useEffect(() => {
     if (selectedOfficer) {
       try {
@@ -101,25 +86,7 @@ const List = ({
       });
     }
     setSelectedPrinter(printer);
-
-    // onSelectedPrinter(printer);
   };
-
-  // Delete a printer
-  // const handleDeleteClick = (printer) => {
-  //   setPrinterToDelete(printer);
-  //   setDeleteModalShow(true);
-  // };
-
-  // const handleDeleteConfirm = () => {
-  //   console.log(`Deleted printer: ${printerToDelete.id}`);
-  //   setDeleteModalShow(false);
-  //   // Additional logic to delete the printer can go here
-  // };
-
-  // const handleDeleteCancel = () => {
-  //   setDeleteModalShow(false);
-  // };
   const handleDeletePrinter = (selectedDeletePrinter) => {
     setDeletePrinter({
       id: selectedDeletePrinter.id,
@@ -235,15 +202,6 @@ const List = ({
           </>
         )}
       </div>
-
-      {/* Delete Printer Modal */}
-      {/* {deleteModalShow && (
-        <DeletePrinter
-          show={deleteModalShow}
-          onClose={handleDeleteCancel}
-          printerCode={printerToDelete.id} // Pass the printer code to be displayed
-        />
-      )} */}
     </div>
   );
 };
