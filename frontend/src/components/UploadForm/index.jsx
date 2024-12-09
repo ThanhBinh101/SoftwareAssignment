@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { useAppContext } from "../../hooks/useAppContext";
 import FileUpload from "./FileUpload";
 import InputInformation from "./InputInformation";
+import axios from "axios";
 
 const UploadForm = () => {
   const {
@@ -23,9 +24,7 @@ const UploadForm = () => {
 
   const { id } = useParams();
 
-  console.log(id);
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
 
     if (!fileUpload) {
@@ -41,18 +40,18 @@ const UploadForm = () => {
     }
 
     const data = {
-      id: Date.now(),
       name: fileUpload.name,
-      printDate: new Date().toISOString().split("T")[0],
-      finishDate: new Date().toISOString().split("T")[0],
       paper: Math.floor(Math.random() * 10) + 1,
       studentID: id,
       printerID: printerIDCheck,
     };
+    try {
+      const response = await axios.post(`http://localhost:8386/addDocument`, data);
+      console.log("Document added:", response.data);
+    } catch (err) {
+      console.log(err.message);
+    }
 
-    console.log(data);
-
-    //Tạo document mới ở chỗ này
   };
 
   return (

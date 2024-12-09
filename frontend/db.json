@@ -94,6 +94,24 @@
       "finishDate": "2024-12-09",
       "paper": 12,
       "studentID": "2252083"
+    },
+    {
+      "id": "ieiujyym5dk",
+      "name": "Lab 5 + 6.pdf",
+      "status": "complete",
+      "printDate": "2024-12-09",
+      "finishDate": "2024-12-09",
+      "paper": 10,
+      "studentID": "2252083"
+    },
+    {
+      "id": "gjp3bvv9dbu",
+      "name": "Lab 5 + 6.pdf",
+      "status": "pending",
+      "printDate": "2024-12-09",
+      "finishDate": "",
+      "paper": 8,
+      "studentID": "2252083"
     }
   ],
   "Printer": [
@@ -101,7 +119,7 @@
       "id": "306B1.1",
       "location": "306B1",
       "status": "Using",
-      "paper": 388,
+      "paper": 378,
       "queue": [],
       "nextMaintain": "2004-01-10",
       "maintains": [
@@ -127,7 +145,8 @@
       "history": [
         "kfjq7d4xjxe8wg4t91",
         "kfjq7d4xjxe8wg4t91",
-        "bp2utn46gci"
+        "bp2utn46gci",
+        "ieiujyym5dk"
       ],
       "availablePaper": null
     },
@@ -221,7 +240,9 @@
       "location": "1",
       "status": "Off",
       "paper": 0,
-      "queue": [],
+      "queue": [
+        "gjp3bvv9dbu"
+      ],
       "nextMaintain": "2004-01-10",
       "maintains": [],
       "availablePaper": 0,

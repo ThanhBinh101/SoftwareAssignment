@@ -24,8 +24,7 @@ const UserOverviewButtonList = ({id}) => {
   const handleAddDocument = async(e) => {
     e.preventDefault();
     setError("");
-    console.log({name, paper})
-
+    
     try {
       const response = await axios.post(`http://localhost:8386/addDocument`, {
         name: name,

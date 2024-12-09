@@ -3,7 +3,7 @@ const path = require('path');
 const filePath = path.join(__dirname, '../../frontend/db.json');
 
 const addDocument = async (req, res) => {
-    const {name, paper, studentID, location} = req.body;
+    const {name, paper, studentID, printerID} = req.body;
 
     if (!name || !paper || !studentID) {
         return res.status(400).json({ message: 'Missing required fields' });
@@ -21,7 +21,7 @@ const addDocument = async (req, res) => {
     try {
         const data = await fs.readFile(filePath, 'utf8');
         const db = JSON.parse(data);
-        const matchPrinters = db.Printer.filter((p) => p.location === location);
+        /*const matchPrinters = db.Printer.filter((p) => p.location === location);
         if (matchPrinters.length === 0) {
             return res.status(404).json("Invalid Location");
         }
@@ -34,10 +34,21 @@ const addDocument = async (req, res) => {
                 newDoc.finishDate = new Date().toISOString().split("T")[0];
                 break;
             }
+        }*/
+        const printer = db.Printer.find(p => p.id === printerID);
+        if (!printer) {
+            return res.status(404).json({ message: 'Printer not found' });
         }
-        if(newDoc.status != "complete") {
+        if(printer.paper >= paper) {
+            if (!printer.history) printer.history = [];
+            printer.history.push(newDoc.id);
+            printer.paper -= paper;
+            newDoc.status = "complete";
+            newDoc.finishDate = new Date().toISOString().split("T")[0];
+        }
+        else {
             if (!printer.queue) printer.queue = [];
-            matchPrinters[0].queue.push(newDoc.id);
+            printer.queue.push(newDoc.id);
             newDoc.status = "pending";
         }
 
