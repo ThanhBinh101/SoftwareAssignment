@@ -4,7 +4,7 @@ import UserAvatar from "./UserAvatar";
 import UserOverviewButtonList from "./UserOverviewButtonList";
 import UserRefillAnnoucement from "./UserRefillAnnoucement";
 
-const UserOverview = () => {
+const UserOverview = ({student}) => {
   const { availablePaper } = useAppContext();
 
   return (
@@ -12,8 +12,8 @@ const UserOverview = () => {
       <div className="mb-[120px] flex w-[1454px] justify-between gap-[100px] rounded-[25px] bg-thirdary p-[45px]">
         <UserAvatar
           imageUrl={"/user-logo-big.svg"}
-          username={"Nguyễn Thanh Bình"}
-          userId={"2252083"}
+          username={student.name}
+          userId={student.id}
         />
 
         <div className="flex flex-1 flex-col justify-between text-[28px]">
@@ -23,7 +23,7 @@ const UserOverview = () => {
 
           <WaitPrintingTable />
 
-          <UserOverviewButtonList />
+          <UserOverviewButtonList id={student.id}/>
 
           <UserRefillAnnoucement
             remainingDay={10}

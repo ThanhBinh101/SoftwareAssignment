@@ -19,7 +19,7 @@ export const BUTTON_USER_OVERVIEW = [
   },
 ];
 
-export const BUTTON_CHOOSE_STUDENT =[
+export const BUTTON_CHOOSE_STUDENT = [
   {
     title: "Student",
     backgroundColor:"primary",
@@ -46,7 +46,7 @@ export const BUTTON_MAINTAIN = [{
 export const BUTTON_REFILL_PAPER = [
   {
     title: "Refill paper",
-    backgroundColor: "primary",
+    backgroundColor: "success",
     textColor:"white"
   }
 ]

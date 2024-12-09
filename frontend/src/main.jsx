@@ -17,23 +17,21 @@ const router = createBrowserRouter([
   {
     element: <RootLayout />,
     children: [
-      {path:'/',
-        element: <Login/>,
-      },
+
       {
         path: "/",
         element: <Login />,
       },
       {
-        path: "/studentHomepage",
+        path: "/studentHomepage/:id",
         element: <HomePage/>
       },
       {
-        path: "/upload",
+        path: "/upload/:id",
         element: <UploadPage />,
       },
       {
-        path: "/purchase",
+        path: "/purchase/:id",
         element: <PurchasePage/>
       },
       {
@@ -45,16 +43,17 @@ const router = createBrowserRouter([
         element: <AdminViewReport/>
       },
       {
-        path: "/officerHomePage",
+        path: "/officerHomePage/:id",
         element: <OfficerHomepage/>
       },
       {
-        path: "/officerReport",
+        path: "/officerReport/:id",
         element: <OfficerReport/>
       },
     ],
   },
 ]);
+
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>

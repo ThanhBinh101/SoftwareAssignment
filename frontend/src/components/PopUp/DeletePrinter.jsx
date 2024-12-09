@@ -1,5 +1,6 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
+import axios from 'axios';
 
 const CustomModal = ({ show, onClose, title, subtitle, message, width, height, confirmText, onConfirm }) => {
   if (!show) return null;
@@ -10,7 +11,6 @@ const CustomModal = ({ show, onClose, title, subtitle, message, width, height, c
         onClose();
       }
     };
-
     window.addEventListener("keydown", handleKeyDown);
 
     return () => {
@@ -42,16 +42,16 @@ const CustomModal = ({ show, onClose, title, subtitle, message, width, height, c
             onClick={onClose}
             className="bg-[#FFEEE8] text-[#A68BC1] w-[160px] h-[52px] rounded-full text-[25px] hover:bg-[#e3ccd7]"
           >
-            Huỷ
+            Cancel
           </button>
           <button
             onClick={() => {
-              onConfirm && onConfirm(); // Call the onConfirm function if it exists
+              onConfirm();
               onClose();
             }}
             className="bg-[#97D99D] text-white w-[160px] h-[52px] rounded-full text-[25px] hover:bg-[#85c68b]"
           >
-            {confirmText || "Xác nhận"}
+            {confirmText || "Concac"}
           </button>
         </div>
       </div>
@@ -62,15 +62,31 @@ const CustomModal = ({ show, onClose, title, subtitle, message, width, height, c
 
 
 const DeletePrinter = ({ show, onClose, printerCode }) => {
+  //const [deleteModalShow, setDeleteModalShow] = useState(false);
+
   const content = {
-    title: "Xoá máy in",
+    title: "Delete Printer",
     subtitle: `${printerCode}`, 
     message: "Sau khi bấm xác nhận sẽ không thể hoàn lại",
+  };
+
+  const handleConfirm = async () => {
+    axios
+      .delete(`http://localhost:8386/Printer/${printerCode}`)
+      .then((response) => {
+        console.log(response.data.message); // Successful deletion message
+        window.location.reload();
+      })
+      .catch((error) => {
+        console.error("Error deleting printer:", error);
+        //setDeleteModalShow(false);
+      });
   };
 
   useEffect(() => {
     const handleKeyDown = (event) => {
       if (event.key === "Escape") {
+        {onConfirm && handleConfirm()}
         onClose(); 
       }
     };
@@ -86,6 +102,7 @@ const DeletePrinter = ({ show, onClose, printerCode }) => {
     <CustomModal
       show={show}
       onClose={onClose}
+      onConfirm={handleConfirm}
       title={content.title}
       subtitle={content.subtitle}
       message={content.message}

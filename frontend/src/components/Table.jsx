@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-const Table = ({ title, tableCol, bgColor }) => {
+const Table = ({ title, tableCol, bgColor , data}) => {
   return (
     <div>
       <div className="text-[28px] font-bold ">{title}</div>
