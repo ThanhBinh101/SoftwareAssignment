@@ -80,7 +80,7 @@ const AddPrinterModal = ({ onClose }) => {
           </div>
 
           <div className="mb-4">
-            <label htmlFor="officerID" className="block text-sm font-medium text-gray-700">Officer ID</label>
+            <label htmlFor="officerID" className="block text-sm font-medium text-gray-700">Next maintain date</label>
             <input
               type="date"
               id="nextMaintain"

@@ -1,935 +1,939 @@
 {
-    "Student": [
+  "Student": [
+    {
+      "id": "2252083",
+      "name": "Cừu Non Nóng Tánh",
+      "password": "1",
+      "availablePaper": 10,
+      "purchases": [
         {
-            "id": "2252083",
-            "name": "Cừu Non Nóng Tánh",
-            "password": "1",
-            "availablePaper": 10,
-            "purchases": [
-              {
-                "date": "2024-09-30",
-                "paper": 20,
-                "amount": 10000
-              },
-              {
-                "date": "2024-10-30",
-                "paper": 20,
-                "amount": 10000
-              },
-              {
-                "date": "2024-12-08",
-                "paper": 200,
-                "amount": 100000
-              },
-              {
-                "date": "2024-12-08",
-                "paper": 100,
-                "amount": 5000
-              },
-              {
-                "date": "2024-12-08",
-                "paper": 60,
-                "amount": 30000
-              },
-              {
-                "date": "2024-12-08",
-                "paper": 40,
-                "amount": 20000
-              },
-              {
-                "date": "2024-12-08",
-                "paper": 20,
-                "amount": 10000
-              },
-              {
-                "date": "2024-12-08",
-                "paper": 30,
-                "amount": 15000
-              }
-            ]
-          },
-          {
-            "id": "2252081",
-            "name": "Cừu Non Nóng Tánh",
-            "password": "1",
-            "availablePaper": 10,
-            "purchases": [
-              {
-                "date": "2024-09-30",
-                "paper": 100,
-                "amount": 50000
-              },
-              {
-                "date": "2024-10-30",
-                "paper": 100,
-                "amount": 50000
-              }
-            ]
-          },
-        {
-            "id": "2252094",
-            "name": "Nguyễn Văn A",
-            "password": "1",
-            "availablePaper": 35,
-            "purchases": [
-                {
-                    "date": "2024-09-25",
-                    "paper": 10,
-                    "amount": 5000
-                },
-                {
-                    "date": "2024-03-22",
-                    "paper": 20,
-                    "amount": 10000
-                }
-            ]
+          "date": "2024-09-30",
+          "paper": 20,
+          "amount": 10000
         },
         {
-            "id": "2252098",
-            "name": "Chàng trai thư giãn",
-            "password": "1",
-            "availablePaper": 90,
-            "purchases": [
-                {
-                    "date": "2024-12-19",
-                    "paper": 200,
-                    "amount": 100000
-                }
-            ]
+          "date": "2024-10-30",
+          "paper": 20,
+          "amount": 10000
         },
         {
-            "id": "2252084",
-            "name": "Đỗ Phú Quí",
-            "password": "1",
-            "availablePaper": 92,
-            "purchases": [
-                {
-                    "date": "2024-06-12",
-                    "paper": 50,
-                    "amount": 25000
-                },
-                {
-                    "date": "2024-11-23",
-                    "paper": 100,
-                    "amount": 50000
-                }
-            ]
+          "date": "2024-12-08",
+          "paper": 200,
+          "amount": 100000
         },
         {
-            "id": "2252097",
-            "name": "Trịnh Trần Phương Tuấn",
-            "password": "1",
-            "availablePaper": 87,
-            "purchases": [
-                {
-                    "date": "2024-08-16",
-                    "paper": 300,
-                    "amount": 150000
-                },
-                {
-                    "date": "2024-12-25",
-                    "paper": 150,
-                    "amount": 75000
-                }
-            ]
+          "date": "2024-12-08",
+          "paper": 100,
+          "amount": 5000
         },
         {
-            "id": "2252087",
-            "name": "J97",
-            "password": "1",
-            "availablePaper": 22,
-            "purchases": [
-                {
-                    "date": "2024-09-26",
-                    "paper": 10,
-                    "amount": 5000
-                },
-                {
-                    "date": "2024-05-04",
-                    "paper": 20,
-                    "amount": 10000
-                },
-                {
-                    "date": "2024-12-04",
-                    "paper": 268,
-                    "amount": 18110
-                }
-            ]
+          "date": "2024-12-08",
+          "paper": 60,
+          "amount": 30000
         },
         {
-            "id": "2252085",
-            "name": "Jack",
-            "password": "1",
-            "availablePaper": 72,
-            "purchases": [
-                {
-                    "date": "2024-03-21",
-                    "paper": 100,
-                    "amount": 50000
-                },
-                {
-                    "date": "2024-09-07",
-                    "paper": 50,
-                    "amount": 25000
-                }
-            ]
+          "date": "2024-12-08",
+          "paper": 40,
+          "amount": 20000
         },
         {
-            "id": "2252099",
-            "name": "Đom Đóm",
-            "password": "1",
-            "availablePaper": 52,
-            "purchases": [
-                {
-                    "date": "2024-10-31",
-                    "paper": 20,
-                    "amount": 10000
-                }
-            ]
+          "date": "2024-12-08",
+          "paper": 20,
+          "amount": 10000
         },
         {
-            "id": "2252088",
-            "name": "Manbo - Vua kể khổ",
-            "password": "1",
-            "availablePaper": 47,
-            "purchases": [
-                {
-                    "date": "2024-08-14",
-                    "paper": 200,
-                    "amount": 100000
-                },
-                {
-                    "date": "2024-06-18",
-                    "paper": 50,
-                    "amount": 25000
-                },
-                {
-                    "date": "2024-02-20",
-                    "paper": 100,
-                    "amount": 50000
-                },
-                {
-                    "date": "2024-10-31",
-                    "paper": 10,
-                    "amount": 5000
-                },
-                {
-                    "date": "2024-02-19",
-                    "paper": 20,
-                    "amount": 10000
-                }
-            ]
+          "date": "2024-12-08",
+          "paper": 30,
+          "amount": 15000
         },
         {
-            "id": "2252004",
-            "name": "Thuyền trưởng Robber",
-            "password": "1",
-            "availablePaper": 65,
-            "purchases": [
-                {
-                    "date": "2024-03-04",
-                    "paper": 100,
-                    "amount": 50000
-                },
-                {
-                    "date": "2024-01-12",
-                    "paper": 200,
-                    "amount": 100000
-                },
-                {
-                    "date": "2024-03-06",
-                    "paper": 300,
-                    "amount": 150000
-                }
-            ]
+          "date": "2024-12-09",
+          "paper": 10,
+          "amount": 5000
         },
         {
-            "id": "2252086",
-            "name": "Gill",
-            "password": "1",
-            "availablePaper": 64,
-            "purchases": [
-                {
-                    "date": "2024-07-17",
-                    "paper": 10,
-                    "amount": 5000
-                },
-                {
-                    "date": "2024-03-31",
-                    "paper": 200,
-                    "amount": 100000
-                },
-                {
-                    "date": "2024-05-26",
-                    "paper": 50,
-                    "amount": 25000
-                },
-                {
-                    "date": "2024-11-03",
-                    "paper": 500,
-                    "amount": 250000
-                }
-            ]
-        }
-    ],
-    "Document": [
-        {
-            "id": "doc1",
-            "name": "Document_55.pdf",
-            "status": "printing",
-            "printDate": "2024-05-07",
-            "finishDate": "2024-08-09",
-            "paper": 14,
-            "studentID": "2252083",
-            "printerID": "209C6.1"
-        },
-        {
-            "id": "doc2",
-            "name": "Document_6.pdf",
-            "status": "printing",
-            "printDate": "2023-04-13",
-            "finishDate": "2024-09-11",
-            "paper": 14,
-            "studentID": "2252081",
-            "printerID": "105C6.5"
-        },
-        {
-            "id": "doc3",
-            "name": "Document_7.pdf",
-            "status": "printing",
-            "printDate": "2023-01-17",
-            "finishDate": "2024-03-02",
-            "paper": 17,
-            "studentID": "2252094",
-            "printerID": "203B4.5"
-        },
-        {
-            "id": "doc4",
-            "name": "Document_42.pdf",
-            "status": "printing",
-            "printDate": "2023-09-01",
-            "finishDate": "2024-08-12",
-            "paper": 11,
-            "studentID": "2252098",
-            "printerID": "201C6.1"
-        },
-        {
-            "id": "doc5",
-            "name": "Document_25.pdf",
-            "status": "printing",
-            "printDate": "2023-03-22",
-            "finishDate": "2024-10-05",
-            "paper": 9,
-            "studentID": "2252097",
-            "printerID": "402A4.2"
-        },
-        {
-            "id": "doc6",
-            "name": "Document_35.pdf",
-            "status": "printing",
-            "printDate": "2024-06-16",
-            "finishDate": "2024-05-13",
-            "paper": 10,
-            "studentID": "2252087",
-            "printerID": "301C5.4"
-        },
-        {
-            "id": "doc7",
-            "name": "Document_72.pdf",
-            "status": "printing",
-            "printDate": "2023-05-15",
-            "finishDate": "2024-12-08",
-            "paper": 12,
-            "studentID": "2252088",
-            "printerID": "201B2.3"
-        },
-        {
-            "id": "doc8",
-            "name": "Document_92.pdf",
-            "status": "printing",
-            "printDate": "2023-06-29",
-            "finishDate": "2024-06-03",
-            "paper": 19,
-            "studentID": "2252099",
-            "printerID": "301A4.2"
-        },
-        {
-            "id": "doc9",
-            "name": "Document_93.pdf",
-            "status": "printing",
-            "printDate": "2024-08-22",
-            "finishDate": "2024-10-29",
-            "paper": 12,
-            "studentID": "2252004",
-            "printerID": "312B1.1"
-        },
-        {
-            "id": "doc10",
-            "name": "Document_4.pdf",
-            "status": "printing",
-            "printDate": "2024-11-06",
-            "finishDate": "2024-04-14",
-            "paper": 17,
-            "studentID": "2252084",
-            "printerID": "205B9.1"
-        }
-    ],
-    "Printer": [
-        {
-            "id": "205B9.1",
-            "location": "205B9",
-            "status": "Using",
-            "paper": 971,
-            "queue": [],
-            "nextMaintain": "2024-12-31",
-            "maintains": [
-                {
-                    "date": "2024-06-25",
-                    "status": "Checked"
-                },
-                {
-                    "date": "2024-01-30",
-                    "status": "Checked"
-                }
-            ],
-            "availablePaper": 178,
-            "refillPaper": [
-                {
-                    "date": "2024-04-15",
-                    "amount": 100
-                },
-                {
-                    "date": "2024-03-30",
-                    "amount": 200
-                },
-                {
-                    "date": "2024-01-25",
-                    "amount": 500
-                },
-                {
-                    "date": "2024-04-01",
-                    "amount": 900
-                }
-            ],
-            "history": [
-                "doc10"
-            ]
-        },
-        {
-            "id": "312B1.1",
-            "location": "312B1",
-            "status": "Using",
-            "paper": 1421,
-            "queue": [],
-            "nextMaintain": "2024-12-01",
-            "maintains": [
-                {
-                    "date": "2021-04-15",
-                    "status": "Checked"
-                },
-                {
-                    "date": "2022-04-30",
-                    "status": "Checked"
-                }
-            ],
-            "availablePaper": 84,
-            "refillPaper": [
-                {
-                    "date": "2010-04-15",
-                    "amount": 81
-                },
-                {
-                    "date": "2020-03-30",
-                    "amount": 781
-                },
-                {
-                    "date": "2021-01-25",
-                    "amount": 831
-                },
-                {
-                    "date": "2023-04-01",
-                    "amount": 887
-                }
-            ],
-            "history": [
-                "doc9"
-            ]
-        },
-        {
-            "id": "105B1.2",
-            "location": "105B1",
-            "status": "Off",
-            "paper": 9665,
-            "queue": [],
-            "nextMaintain": "2024-04-05",
-            "maintains": [
-                {
-                    "date": "2022-03-26",
-                    "status": "Checked"
-                },
-                {
-                    "date": "2024-11-02",
-                    "status": "Checked"
-                }
-            ],
-            "availablePaper": 73,
-            "refillPaper": [
-                {
-                    "date": "2024-01-05",
-                    "amount": 38
-                },
-                {
-                    "date": "2024-11-09",
-                    "amount": 303
-                }
-            ],
-            "history": [
-            ]
-        },
-        {
-            "id": "201B2.3",
-            "location": "201B2",
-            "status": "Off",
-            "paper": 9700,
-            "queue": [],
-            "nextMaintain": "2024-10-17",
-            "maintains": [
-                {
-                    "date": "2024-08-02",
-                    "status": "Checked"
-                }
-            ],
-            "availablePaper": 26,
-            "refillPaper": [
-                {
-                    "date": "2024-08-24",
-                    "amount": 519
-                },
-                {
-                    "date": "2024-01-22",
-                    "amount": 330
-                },
-                {
-                    "date": "2024-11-11",
-                    "amount": 169
-                },
-                {
-                    "date": "2024-07-23",
-                    "amount": 218
-                },
-                {
-                    "date": "2024-06-24",
-                    "amount": 256
-                }
-            ],
-            "history": [
-                "doc7"
-            ]
-        },
-        {
-            "id": "402A4.2",
-            "location": "402A4",
-            "status": "Off",
-            "paper": 5084,
-            "queue": [],
-            "nextMaintain": "2024-02-03",
-            "maintains": [
-                {
-                    "date": "2024-05-16",
-                    "status": "Checked"
-                },
-                {
-                    "date": "2024-07-03",
-                    "status": "Checked"
-                },
-                {
-                    "date": "2024-06-22",
-                    "status": "Checked"
-                }
-            ],
-            "availablePaper": 1,
-            "refillPaper": [
-                {
-                    "date": "2024-04-26",
-                    "amount": 996
-                },
-                {
-                    "date": "2024-06-21",
-                    "amount": 896
-                }
-            ],
-            "history": [
-                "doc5"
-            ]
-        },
-        {
-            "id": "203B4.5",
-            "location": "203B4",
-            "status": "On",
-            "paper": 3250,
-            "queue": [],
-            "nextMaintain": "2024-04-30",
-            "maintains": [
-                {
-                    "date": "2024-03-13",
-                    "status": "Checked"
-                },
-                {
-                    "date": "2024-10-02",
-                    "status": "Checked"
-                }
-            ],
-            "availablePaper": 4,
-            "refillPaper": [
-                {
-                    "date": "2024-05-24",
-                    "amount": 622
-                },
-                {
-                    "date": "2024-10-08",
-                    "amount": 318
-                },
-                {
-                    "date": "2024-07-07",
-                    "amount": 882
-                }
-            ],
-            "history": [
-                "doc3"
-            ]
-        },
-        {
-            "id": "301A4.2",
-            "location": "301A4",
-            "status": "Off",
-            "paper": 622,
-            "queue": [],
-            "nextMaintain": "2024-08-20",
-            "maintains": [
-                {
-                    "date": "2024-03-25",
-                    "status": "Checked"
-                }
-            ],
-            "availablePaper": 80,
-            "refillPaper": [
-                {
-                    "date": "2024-01-19",
-                    "amount": 433
-                },
-                {
-                    "date": "2024-07-27",
-                    "amount": 366
-                }
-            ],
-            "history": [
-                "doc8"
-            ]
-        },
-        {
-            "id": "201C6.1",
-            "location": "201C6",
-            "status": "Using",
-            "paper": 5242,
-            "queue": [],
-            "nextMaintain": "2024-10-24",
-            "maintains": [
-                {
-                    "date": "2024-10-13",
-                    "status": "Checked"
-                },
-                {
-                    "date": "2024-02-20",
-                    "status": "Checked"
-                }
-            ],
-            "availablePaper": 51,
-            "refillPaper": [
-                {
-                    "date": "2024-06-02",
-                    "amount": 735
-                },
-                {
-                    "date": "2024-01-06",
-                    "amount": 511
-                },
-                {
-                    "date": "2024-06-19",
-                    "amount": 896
-                },
-                {
-                    "date": "2024-03-19",
-                    "amount": 583
-                },
-                {
-                    "date": "2024-12-28",
-                    "amount": 190
-                }
-            ],
-            "history": [
-                "doc4"
-            ]
-        },
-        {
-            "id": "301C5.4",
-            "location": "301C5",
-            "status": "On",
-            "paper": 2333,
-            "queue": [],
-            "nextMaintain": "2024-07-17",
-            "maintains": [
-                {
-                    "date": "2024-04-11",
-                    "status": "Checked"
-                },
-                {
-                    "date": "2024-08-31",
-                    "status": "Checked"
-                }
-            ],
-            "availablePaper": 75,
-            "refillPaper": [
-                {
-                    "date": "2024-07-30",
-                    "amount": 32
-                },
-                {
-                    "date": "2024-10-03",
-                    "amount": 579
-                },
-                {
-                    "date": "2024-11-30",
-                    "amount": 330
-                },
-                {
-                    "date": "2024-11-29",
-                    "amount": 383
-                }
-            ],
-            "history": [
-                "doc6"
-            ]
-        },
-        {
-            "id": "105C6.5",
-            "location": "105C6",
-            "status": "Off",
-            "paper": 5720,
-            "queue": [],
-            "nextMaintain": "2024-05-14",
-            "maintains": [
-                {
-                    "date": "2024-02-06",
-                    "status": "Checked"
-                },
-                {
-                    "date": "2024-12-11",
-                    "status": "Checked"
-                }
-            ],
-            "availablePaper": 96,
-            "refillPaper": [
-                {
-                    "date": "2012-02-25",
-                    "amount": 403
-                },
-                {
-                    "date": "2024-09-05",
-                    "amount": 208
-                },
-                {
-                    "date": "2024-11-08",
-                    "amount": 629
-                },
-                {
-                    "date": "2024-07-31",
-                    "amount": 136
-                },
-                {
-                    "date": "2024-03-15",
-                    "amount": 754
-                }
-            ],
-            "history": [
-                "doc2"
-            ]
-        },
-        {
-            "id": "209C6.1",
-            "location": "209C6",
-            "status": "Using",
-            "paper": 9034,
-            "queue": [],
-            "nextMaintain": "2024-04-01",
-            "maintains": [
-                {
-                    "date": "2024-12-10",
-                    "status": "Checked"
-                },
-                {
-                    "date": "2024-11-07",
-                    "status": "Checked"
-                },
-                {
-                    "date": "2024-05-26",
-                    "status": "Checked"
-                }
-            ],
-            "availablePaper": 83,
-            "refillPaper": [
-                {
-                    "date": "2024-06-22",
-                    "amount": 16
-                },
-                {
-                    "date": "2024-02-28",
-                    "amount": 134
-                },
-                {
-                    "date": "2024-10-03",
-                    "amount": 362
-                },
-                {
-                    "date": "2024-03-02",
-                    "amount": 884
-                }
-            ],
-            "history": [
-                "doc1"
-            ]
-        }
-    ],
-    "Officer": [
-        {
-            "id": "8810",
-            "name": "Trần Thiện Thanh Bảo",
-            "password": "1",
-            "printers": [
-                "312B1.1",
-                "105B1.2"
-            ]
-        },
-        {
-            "id": "8452",
-            "name": "Bao Thanh Thien",
-            "password": "1",
-            "printers": [
-                "402A4.2",
-                "301A4.2"
-            ]
-        },
-        {
-            "id": "8226",
-            "name": "BGay",
-            "password": "1",
-            "printers": [
-                "201B2.3"
-            ]
-        },
-        {
-            "id": "8886",
-            "name": "Masiu",
-            "password": "1",
-            "printers": [
-                "203B4.5",
-                "301B4.1",
-                "405B4.2"
-            ]
-        },
-        {
-            "id": "8245",
-            "name": "Masew",
-            "password": "1",
-            "printers": [
-                "201C6.1",
-                "105C6.5",
-                "209C6.1"
-            ]
-        },
-        {
-            "id": "8244",
-            "name": "Bao Chẩn",
-            "password": "1",
-            "printers": [
-                "301C5.4"
-            ]
-        },
-        {
-            "id": "8813",
-            "name": "Blacka",
-            "password": "1",
-            "printers": [
-                "204B8.3"
-            ]
-        },
-        {
-            "id": "8285",
-            "name": "Andree tay phải",
-            "password": "1",
-            "printers": [
-                "104B9.3",
-                "205B9.1"
-            ]
-        },
-        {
-            "id": "8738",
-            "name": "Sấy đa",
-            "password": "1",
-            "printers": [
-                "201B10.2"
-            ]
-        },
-        {
-            "id": "8202",
-            "name": "Justasuy",
-            "password": "1",
-            "printers": [
-                "201C1.1",
-                "106C1.6"
-            ]
-        }
-    ],
-    "Admin": [
-        {
-          "accounts": [
-            {
-              "id": "22",
-              "password": "1",
-              "name": "Nguyen Thi Thanh Binh"
-            }
-          ],
-          "purchases": [
-            5000,
-            10000,
-            15000,
-            20000,
-            30000,
-            50000,
-            80000,
-            100000
-          ],
-          "format": [
-            {
-              "name": "PDF",
-              "allow": true
-            },
-            {
-              "name": "DOC/DOCX",
-              "allow": true
-            },
-            {
-              "name": "TXT",
-              "allow": true
-            },
-            {
-              "name": "JPEG/JPG",
-              "allow": true
-            }
-          ],
-          "nextRefill": "2024-12-20",
-          "paper": 1,
-          "price": 500,
-          "refillAmount": 100
+          "date": "2024-12-09",
+          "paper": 200,
+          "amount": 100000
         }
       ]
+    },
+    {
+      "id": "2252081",
+      "name": "Cừu Non Nóng Tánh",
+      "password": "1",
+      "availablePaper": 10,
+      "purchases": [
+        {
+          "date": "2024-09-30",
+          "paper": 100,
+          "amount": 50000
+        },
+        {
+          "date": "2024-10-30",
+          "paper": 100,
+          "amount": 50000
+        }
+      ]
+    },
+    {
+      "id": "2252094",
+      "name": "Nguyễn Văn A",
+      "password": "1",
+      "availablePaper": 35,
+      "purchases": [
+        {
+          "date": "2024-09-25",
+          "paper": 10,
+          "amount": 5000
+        },
+        {
+          "date": "2024-03-22",
+          "paper": 20,
+          "amount": 10000
+        }
+      ]
+    },
+    {
+      "id": "2252098",
+      "name": "Chàng trai thư giãn",
+      "password": "1",
+      "availablePaper": 90,
+      "purchases": [
+        {
+          "date": "2024-12-19",
+          "paper": 200,
+          "amount": 100000
+        }
+      ]
+    },
+    {
+      "id": "2252084",
+      "name": "Đỗ Phú Quí",
+      "password": "1",
+      "availablePaper": 92,
+      "purchases": [
+        {
+          "date": "2024-06-12",
+          "paper": 50,
+          "amount": 25000
+        },
+        {
+          "date": "2024-11-23",
+          "paper": 100,
+          "amount": 50000
+        }
+      ]
+    },
+    {
+      "id": "2252097",
+      "name": "Trịnh Trần Phương Tuấn",
+      "password": "1",
+      "availablePaper": 87,
+      "purchases": [
+        {
+          "date": "2024-08-16",
+          "paper": 300,
+          "amount": 150000
+        },
+        {
+          "date": "2024-12-25",
+          "paper": 150,
+          "amount": 75000
+        }
+      ]
+    },
+    {
+      "id": "2252087",
+      "name": "J97",
+      "password": "1",
+      "availablePaper": 22,
+      "purchases": [
+        {
+          "date": "2024-09-26",
+          "paper": 10,
+          "amount": 5000
+        },
+        {
+          "date": "2024-05-04",
+          "paper": 20,
+          "amount": 10000
+        },
+        {
+          "date": "2024-12-04",
+          "paper": 268,
+          "amount": 18110
+        }
+      ]
+    },
+    {
+      "id": "2252085",
+      "name": "Jack",
+      "password": "1",
+      "availablePaper": 72,
+      "purchases": [
+        {
+          "date": "2024-03-21",
+          "paper": 100,
+          "amount": 50000
+        },
+        {
+          "date": "2024-09-07",
+          "paper": 50,
+          "amount": 25000
+        }
+      ]
+    },
+    {
+      "id": "2252099",
+      "name": "Đom Đóm",
+      "password": "1",
+      "availablePaper": 52,
+      "purchases": [
+        {
+          "date": "2024-10-31",
+          "paper": 20,
+          "amount": 10000
+        }
+      ]
+    },
+    {
+      "id": "2252088",
+      "name": "Manbo - Vua kể khổ",
+      "password": "1",
+      "availablePaper": 47,
+      "purchases": [
+        {
+          "date": "2024-08-14",
+          "paper": 200,
+          "amount": 100000
+        },
+        {
+          "date": "2024-06-18",
+          "paper": 50,
+          "amount": 25000
+        },
+        {
+          "date": "2024-02-20",
+          "paper": 100,
+          "amount": 50000
+        },
+        {
+          "date": "2024-10-31",
+          "paper": 10,
+          "amount": 5000
+        },
+        {
+          "date": "2024-02-19",
+          "paper": 20,
+          "amount": 10000
+        }
+      ]
+    },
+    {
+      "id": "2252004",
+      "name": "Thuyền trưởng Robber",
+      "password": "1",
+      "availablePaper": 65,
+      "purchases": [
+        {
+          "date": "2024-03-04",
+          "paper": 100,
+          "amount": 50000
+        },
+        {
+          "date": "2024-01-12",
+          "paper": 200,
+          "amount": 100000
+        },
+        {
+          "date": "2024-03-06",
+          "paper": 300,
+          "amount": 150000
+        }
+      ]
+    },
+    {
+      "id": "2252086",
+      "name": "Gill",
+      "password": "1",
+      "availablePaper": 64,
+      "purchases": [
+        {
+          "date": "2024-07-17",
+          "paper": 10,
+          "amount": 5000
+        },
+        {
+          "date": "2024-03-31",
+          "paper": 200,
+          "amount": 100000
+        },
+        {
+          "date": "2024-05-26",
+          "paper": 50,
+          "amount": 25000
+        },
+        {
+          "date": "2024-11-03",
+          "paper": 500,
+          "amount": 250000
+        }
+      ]
+    }
+  ],
+  "Document": [
+    {
+      "id": "doc1",
+      "name": "Document_55.pdf",
+      "status": "printing",
+      "printDate": "2024-05-07",
+      "finishDate": "2024-08-09",
+      "paper": 14,
+      "studentID": "2252083",
+      "printerID": "209C6.1"
+    },
+    {
+      "id": "doc2",
+      "name": "Document_6.pdf",
+      "status": "printing",
+      "printDate": "2023-04-13",
+      "finishDate": "2024-09-11",
+      "paper": 14,
+      "studentID": "2252081",
+      "printerID": "105C6.5"
+    },
+    {
+      "id": "doc3",
+      "name": "Document_7.pdf",
+      "status": "printing",
+      "printDate": "2023-01-17",
+      "finishDate": "2024-03-02",
+      "paper": 17,
+      "studentID": "2252094",
+      "printerID": "203B4.5"
+    },
+    {
+      "id": "doc4",
+      "name": "Document_42.pdf",
+      "status": "printing",
+      "printDate": "2023-09-01",
+      "finishDate": "2024-08-12",
+      "paper": 11,
+      "studentID": "2252098",
+      "printerID": "201C6.1"
+    },
+    {
+      "id": "doc5",
+      "name": "Document_25.pdf",
+      "status": "printing",
+      "printDate": "2023-03-22",
+      "finishDate": "2024-10-05",
+      "paper": 9,
+      "studentID": "2252097",
+      "printerID": "402A4.2"
+    },
+    {
+      "id": "doc6",
+      "name": "Document_35.pdf",
+      "status": "printing",
+      "printDate": "2024-06-16",
+      "finishDate": "2024-05-13",
+      "paper": 10,
+      "studentID": "2252087",
+      "printerID": "301C5.4"
+    },
+    {
+      "id": "doc7",
+      "name": "Document_72.pdf",
+      "status": "printing",
+      "printDate": "2023-05-15",
+      "finishDate": "2024-12-08",
+      "paper": 12,
+      "studentID": "2252088",
+      "printerID": "201B2.3"
+    },
+    {
+      "id": "doc8",
+      "name": "Document_92.pdf",
+      "status": "printing",
+      "printDate": "2023-06-29",
+      "finishDate": "2024-06-03",
+      "paper": 19,
+      "studentID": "2252099",
+      "printerID": "301A4.2"
+    },
+    {
+      "id": "doc9",
+      "name": "Document_93.pdf",
+      "status": "printing",
+      "printDate": "2024-08-22",
+      "finishDate": "2024-10-29",
+      "paper": 12,
+      "studentID": "2252004",
+      "printerID": "312B1.1"
+    },
+    {
+      "id": "doc10",
+      "name": "Document_4.pdf",
+      "status": "printing",
+      "printDate": "2024-11-06",
+      "finishDate": "2024-04-14",
+      "paper": 17,
+      "studentID": "2252084",
+      "printerID": "205B9.1"
+    }
+  ],
+  "Printer": [
+    {
+      "id": "205B9.1",
+      "location": "205B9",
+      "status": "Using",
+      "paper": 971,
+      "queue": [],
+      "nextMaintain": "2024-12-31",
+      "maintains": [
+        {
+          "date": "2024-06-25",
+          "status": "Checked"
+        },
+        {
+          "date": "2024-01-30",
+          "status": "Checked"
+        }
+      ],
+      "availablePaper": 178,
+      "refillPaper": [
+        {
+          "date": "2024-04-15",
+          "amount": 100
+        },
+        {
+          "date": "2024-03-30",
+          "amount": 200
+        },
+        {
+          "date": "2024-01-25",
+          "amount": 500
+        },
+        {
+          "date": "2024-04-01",
+          "amount": 900
+        }
+      ],
+      "history": [
+        "doc10"
+      ]
+    },
+    {
+      "id": "312B1.1",
+      "location": "312B1",
+      "status": "Using",
+      "paper": 1421,
+      "queue": [],
+      "nextMaintain": "2024-12-01",
+      "maintains": [
+        {
+          "date": "2021-04-15",
+          "status": "Checked"
+        },
+        {
+          "date": "2022-04-30",
+          "status": "Checked"
+        }
+      ],
+      "availablePaper": 84,
+      "refillPaper": [
+        {
+          "date": "2010-04-15",
+          "amount": 81
+        },
+        {
+          "date": "2020-03-30",
+          "amount": 781
+        },
+        {
+          "date": "2021-01-25",
+          "amount": 831
+        },
+        {
+          "date": "2023-04-01",
+          "amount": 887
+        }
+      ],
+      "history": [
+        "doc9"
+      ]
+    },
+    {
+      "id": "201B2.3",
+      "location": "201B2",
+      "status": "Off",
+      "paper": 9700,
+      "queue": [],
+      "nextMaintain": "2024-10-17",
+      "maintains": [
+        {
+          "date": "2024-08-02",
+          "status": "Checked"
+        }
+      ],
+      "availablePaper": 26,
+      "refillPaper": [
+        {
+          "date": "2024-08-24",
+          "amount": 519
+        },
+        {
+          "date": "2024-01-22",
+          "amount": 330
+        },
+        {
+          "date": "2024-11-11",
+          "amount": 169
+        },
+        {
+          "date": "2024-07-23",
+          "amount": 218
+        },
+        {
+          "date": "2024-06-24",
+          "amount": 256
+        }
+      ],
+      "history": [
+        "doc7"
+      ]
+    },
+    {
+      "id": "402A4.2",
+      "location": "402A4",
+      "status": "Off",
+      "paper": 5084,
+      "queue": [],
+      "nextMaintain": "2024-02-03",
+      "maintains": [
+        {
+          "date": "2024-05-16",
+          "status": "Checked"
+        },
+        {
+          "date": "2024-07-03",
+          "status": "Checked"
+        },
+        {
+          "date": "2024-06-22",
+          "status": "Checked"
+        }
+      ],
+      "availablePaper": 1,
+      "refillPaper": [
+        {
+          "date": "2024-04-26",
+          "amount": 996
+        },
+        {
+          "date": "2024-06-21",
+          "amount": 896
+        }
+      ],
+      "history": [
+        "doc5"
+      ]
+    },
+    {
+      "id": "203B4.5",
+      "location": "203B4",
+      "status": "On",
+      "paper": 3250,
+      "queue": [],
+      "nextMaintain": "2024-04-30",
+      "maintains": [
+        {
+          "date": "2024-03-13",
+          "status": "Checked"
+        },
+        {
+          "date": "2024-10-02",
+          "status": "Checked"
+        }
+      ],
+      "availablePaper": 4,
+      "refillPaper": [
+        {
+          "date": "2024-05-24",
+          "amount": 622
+        },
+        {
+          "date": "2024-10-08",
+          "amount": 318
+        },
+        {
+          "date": "2024-07-07",
+          "amount": 882
+        }
+      ],
+      "history": [
+        "doc3"
+      ]
+    },
+    {
+      "id": "301A4.2",
+      "location": "301A4",
+      "status": "Off",
+      "paper": 622,
+      "queue": [],
+      "nextMaintain": "2024-08-20",
+      "maintains": [
+        {
+          "date": "2024-03-25",
+          "status": "Checked"
+        }
+      ],
+      "availablePaper": 80,
+      "refillPaper": [
+        {
+          "date": "2024-01-19",
+          "amount": 433
+        },
+        {
+          "date": "2024-07-27",
+          "amount": 366
+        }
+      ],
+      "history": [
+        "doc8"
+      ]
+    },
+    {
+      "id": "201C6.1",
+      "location": "201C6",
+      "status": "Off",
+      "paper": 5272,
+      "queue": [],
+      "nextMaintain": "2024-12-10",
+      "maintains": [
+        {
+          "date": "2024-10-13",
+          "status": "Checked"
+        },
+        {
+          "date": "2024-02-20",
+          "status": "Checked"
+        },
+        {
+          "date": "2024-12-09",
+          "status": "Máy bị hư "
+        }
+      ],
+      "availablePaper": 51,
+      "refillPaper": [
+        {
+          "date": "2024-06-02",
+          "amount": 735
+        },
+        {
+          "date": "2024-01-06",
+          "amount": 511
+        },
+        {
+          "date": "2024-06-19",
+          "amount": 896
+        },
+        {
+          "date": "2024-03-19",
+          "amount": 583
+        },
+        {
+          "date": "2024-12-28",
+          "amount": 190
+        },
+        {
+          "date": "2024-12-09",
+          "amount": 10,
+          "paper": 5252
+        },
+        {
+          "date": "2024-12-09",
+          "amount": 20,
+          "paper": 5272
+        }
+      ],
+      "history": [
+        "doc4"
+      ]
+    },
+    {
+      "id": "301C5.4",
+      "location": "301C5",
+      "status": "On",
+      "paper": 2333,
+      "queue": [],
+      "nextMaintain": "2024-07-17",
+      "maintains": [
+        {
+          "date": "2024-04-11",
+          "status": "Checked"
+        },
+        {
+          "date": "2024-08-31",
+          "status": "Checked"
+        }
+      ],
+      "availablePaper": 75,
+      "refillPaper": [
+        {
+          "date": "2024-07-30",
+          "amount": 32
+        },
+        {
+          "date": "2024-10-03",
+          "amount": 579
+        },
+        {
+          "date": "2024-11-30",
+          "amount": 330
+        },
+        {
+          "date": "2024-11-29",
+          "amount": 383
+        }
+      ],
+      "history": [
+        "doc6"
+      ]
+    },
+    {
+      "id": "105C6.5",
+      "location": "105C6",
+      "status": "Off",
+      "paper": 5720,
+      "queue": [],
+      "nextMaintain": "2024-05-14",
+      "maintains": [
+        {
+          "date": "2024-02-06",
+          "status": "Checked"
+        },
+        {
+          "date": "2024-12-11",
+          "status": "Checked"
+        }
+      ],
+      "availablePaper": 96,
+      "refillPaper": [
+        {
+          "date": "2012-02-25",
+          "amount": 403
+        },
+        {
+          "date": "2024-09-05",
+          "amount": 208
+        },
+        {
+          "date": "2024-11-08",
+          "amount": 629
+        },
+        {
+          "date": "2024-07-31",
+          "amount": 136
+        },
+        {
+          "date": "2024-03-15",
+          "amount": 754
+        }
+      ],
+      "history": [
+        "doc2"
+      ]
+    },
+    {
+      "id": "209C6.1",
+      "location": "209C6",
+      "status": "Using",
+      "paper": 9034,
+      "queue": [],
+      "nextMaintain": "2024-04-01",
+      "maintains": [
+        {
+          "date": "2024-12-10",
+          "status": "Checked"
+        },
+        {
+          "date": "2024-11-07",
+          "status": "Checked"
+        },
+        {
+          "date": "2024-05-26",
+          "status": "Checked"
+        }
+      ],
+      "availablePaper": 83,
+      "refillPaper": [
+        {
+          "date": "2024-06-22",
+          "amount": 16
+        },
+        {
+          "date": "2024-02-28",
+          "amount": 134
+        },
+        {
+          "date": "2024-10-03",
+          "amount": 362
+        },
+        {
+          "date": "2024-03-02",
+          "amount": 884
+        }
+      ],
+      "history": [
+        "doc1"
+      ]
+    },
+    {
+      "id": "307C6.4",
+      "location": "307C6",
+      "status": "Off",
+      "paper": 0,
+      "queue": [],
+      "nextMaintain": "2025-02-01",
+      "maintains": [],
+      "history": [],
+      "refillPaper": []
+    }
+  ],
+  "Officer": [
+    {
+      "id": "8810",
+      "name": "Trần Thiện Thanh Bảo",
+      "password": "1",
+      "printers": [
+        "312B1.1"
+      ]
+    },
+    {
+      "id": "8452",
+      "name": "Bao Thanh Thien",
+      "password": "1",
+      "printers": [
+        "402A4.2",
+        "301A4.2"
+      ]
+    },
+    {
+      "id": "8226",
+      "name": "BGay",
+      "password": "1",
+      "printers": [
+        "201B2.3"
+      ]
+    },
+    {
+      "id": "8886",
+      "name": "Masiu",
+      "password": "1",
+      "printers": [
+        "203B4.5",
+        "301B4.1",
+        "405B4.2",
+        "307C6.4"
+      ]
+    },
+    {
+      "id": "8245",
+      "name": "Masew",
+      "password": "1",
+      "printers": [
+        "201C6.1",
+        "105C6.5",
+        "209C6.1"
+      ]
+    },
+    {
+      "id": "8244",
+      "name": "Bao Chẩn",
+      "password": "1",
+      "printers": [
+        "301C5.4"
+      ]
+    },
+    {
+      "id": "8813",
+      "name": "Blacka",
+      "password": "1",
+      "printers": [
+        "204B8.3"
+      ]
+    },
+    {
+      "id": "8285",
+      "name": "Andree tay phải",
+      "password": "1",
+      "printers": [
+        "104B9.3",
+        "205B9.1"
+      ]
+    },
+    {
+      "id": "8738",
+      "name": "Sấy đa",
+      "password": "1",
+      "printers": [
+        "201B10.2"
+      ]
+    },
+    {
+      "id": "8202",
+      "name": "Justasuy",
+      "password": "1",
+      "printers": [
+        "201C1.1",
+        "106C1.6"
+      ]
+    }
+  ],
+  "Admin": [
+    {
+      "accounts": [
+        {
+          "id": "22",
+          "password": "1",
+          "name": "Nguyen Thi Thanh Binh"
+        }
+      ],
+      "purchases": [
+        5000,
+        10000,
+        15000,
+        20000,
+        30000,
+        50000,
+        80000,
+        100000
+      ],
+      "format": [
+        {
+          "name": "PDF",
+          "allow": true
+        },
+        {
+          "name": "DOC/DOCX",
+          "allow": true
+        },
+        {
+          "name": "TXT",
+          "allow": true
+        },
+        {
+          "name": "JPEG/JPG",
+          "allow": true
+        }
+      ],
+      "nextRefill": "2024-12-20",
+      "paper": 1,
+      "price": 500,
+      "refillAmount": 100
+    }
+  ]
 }

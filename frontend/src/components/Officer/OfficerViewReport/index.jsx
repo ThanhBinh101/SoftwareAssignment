@@ -63,8 +63,8 @@ const ViewReport = () => {
     const startDateValue = startDate;
     const endDateValue = endDate;
     const searchValue = searchBar;
-    console.log({ startDateValue, endDateValue, searchValue });
-    console.log({ maintainHis, refillHis, matchingDocs });
+    // console.log({ startDateValue, endDateValue, searchValue });
+    // console.log({ maintainHis, refillHis, matchingDocs });
     if (startDate && endDate) {
       const start = new Date(startDateValue);
       const end = new Date(endDateValue);
@@ -95,13 +95,17 @@ const ViewReport = () => {
       });
       setFilteredRefillHis(tempRefillHis);
 
-      console.log({ matchingDocs });
+      // console.log({ matchingDocs });
       const tempMatchingDocs = matchingDocs.filter((item) => {
         const date = new Date(item.printDate);
         return date >= start && date <= end;
       });
       console.log(tempMatchingDocs);
       setFilteredMatchingDocs(tempMatchingDocs);
+    } else {
+      setFilteredMaintainHis(maintainHis);
+      setFilteredRefillHis(refillHis);
+      setFilteredMatchingDocs(matchingDocs);
     }
 
     if (searchValue) {
