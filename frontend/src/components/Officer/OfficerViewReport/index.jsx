@@ -65,7 +65,14 @@ const ViewReport = () => {
     const searchValue = searchBar;
     // console.log({ startDateValue, endDateValue, searchValue });
     // console.log({ maintainHis, refillHis, matchingDocs });
+    
     if (startDate && endDate) {
+
+      if (startDate > endDate) {
+        alert("Bạn nhập sai ngày");
+        return;
+      }
+
       const start = new Date(startDateValue);
       const end = new Date(endDateValue);
 
