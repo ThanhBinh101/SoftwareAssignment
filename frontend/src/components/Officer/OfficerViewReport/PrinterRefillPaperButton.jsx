@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { BUTTON_REFILL_PAPER } from "../../../libs/constant";
 import Button from "../../Button";
 import React, { useState } from "react";
@@ -35,22 +36,20 @@ const PrinterRefillPaperButton = ({
       const data = response.data.newRefill;
 
       const currentPrinter = printerList.find((item) => item.id === id);
-      currentPrinter.refillPaper.push(data);
+      currentPrinter.refillPaper.push({ data: data.date, amount: data.amount });
+      currentPrinter.paper = data.paper;
 
       const currentPrinterChange = JSON.parse(JSON.stringify(currentPrinter));
 
-      // console.log({printerList});
-      // console.log({filteredPrinterList});
-
-      // setPrinterList(printerList);
-      // setFilteredPrinterList(printerList);
+      setPrinterList(JSON.parse(JSON.stringify(printerList)));
+      setFilteredPrinterList(JSON.parse(JSON.stringify(printerList)));
       setSelectedPrinter(currentPrinterChange);
       setStartDate("");
       setEndDate("");
-
       setshowPopup(false);
       setError(""); // Clear error message
     } catch (err) {
+      console.log(err);
       setError("Error adding Refill. Please try again.");
     } finally {
       setLoading(false);

@@ -295,7 +295,17 @@ const ViewReport = () => {
                       />
                     </div>
                     <div className="mt-[25px] flex h-[52px] w-[245px] items-center justify-center rounded-[25px] bg-[#FEC8D8] text-xl">
-                      <PrinterMaintainButton id={selectedPrinter.id} />
+                      <PrinterMaintainButton 
+                        selectedPrinter={selectedPrinter}
+                        setSelectedPrinter={setSelectedPrinter}
+                        setStartDate={setStartDate}
+                        setEndDate={setEndDate}
+                        printerList={printerList}
+                        setPrinterList={setPrinterList}
+                        filteredPrinterList={filteredPrinterList}
+                        setFilteredPrinterList={setFilteredPrinterList}
+                        id={selectedPrinter.id} 
+                      />
                     </div>
                     <MaintainPrinter
                       show={maintainModalShow}

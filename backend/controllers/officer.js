@@ -20,10 +20,11 @@ const refillPaper = async (req, res) => {
     }
     const newRefill = {
       date: new Date().toISOString().split("T")[0],
-      amount: amount
+      amount: amount,
     }
     printer.refillPaper.push(newRefill);
     printer.paper = printer.paper + amount;
+    newRefill.paper = printer.paper;
     await fs.writeFile(filePath, JSON.stringify(db, null, 2));
     return res.status(201).json({ message: 'Refill added successfully', newRefill });
   } catch (err) {

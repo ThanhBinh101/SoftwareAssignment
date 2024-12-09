@@ -10,23 +10,6 @@ const List = ({
   selectedStudent,
   setSelectedStudent
 }) => {
-  // const [selectedStudent, setSelectedStudent] = useState(null);
-  // const [studentList, setStudentList] = useState([]);
-
-  // console.log(selectedStudent);
-
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const response = await axios.get(`http://localhost:3000/Student`);
-  //       console.log("Fetched Students:", response.data);
-  //       setStudentList(response.data); // Set studentList with the response data
-  //     } catch (err) {
-  //       console.error("Error fetching data:", err);
-  //     }
-  //   };
-  //   fetchData();
-  // }, []);
 
   const handleSelect = (student) => {
     setSelectedStudent(student);

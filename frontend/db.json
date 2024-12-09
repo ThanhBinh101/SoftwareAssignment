@@ -75,7 +75,8 @@
       "printDate": "2024-10-01",
       "finishDate": "2024-10-01",
       "paper": 10,
-      "studentID": "2252083"
+      "studentID": "2252083",
+      "printerID": "306B1.1"
     }
   ],
   "Printer": [
@@ -161,9 +162,9 @@
       "id": "306B1.3",
       "location": "306B1",
       "status": "On",
-      "paper": 1735,
+      "paper": 2267,
       "queue": [],
-      "nextMaintain": "2024-08-09",
+      "nextMaintain": "2024-12-09",
       "maintains": [
         {
           "date": "2024-10-01",
@@ -176,6 +177,26 @@
         {
           "date": "2024-12-09",
           "status": "hello"
+        },
+        {
+          "date": "2024-12-09",
+          "status": "hello"
+        },
+        {
+          "date": "2024-12-09",
+          "status": "tuan anh dep trai"
+        },
+        {
+          "date": "2024-12-09",
+          "status": "kinchana"
+        },
+        {
+          "date": "2024-12-09",
+          "status": "kinchana yo"
+        },
+        {
+          "date": "2024-12-09",
+          "status": "hello bro"
         }
       ],
       "availablePaper": 10,
@@ -202,55 +223,25 @@
         },
         {
           "date": "2024-12-09",
-          "amount": 10
+          "amount": 40
         },
         {
           "date": "2024-12-09",
-          "amount": 1
+          "amount": 50
         },
         {
           "date": "2024-12-09",
-          "amount": 2
+          "amount": 12
         },
         {
           "date": "2024-12-09",
-          "amount": 2
+          "amount": 20,
+          "paper": 2227
         },
         {
           "date": "2024-12-09",
-          "amount": 5
-        },
-        {
-          "date": "2024-12-09",
-          "amount": 5
-        },
-        {
-          "date": "2024-12-09",
-          "amount": 100
-        },
-        {
-          "date": "2024-12-09",
-          "amount": 100
-        },
-        {
-          "date": "2024-12-09",
-          "amount": 200
-        },
-        {
-          "date": "2024-12-09",
-          "amount": 200
-        },
-        {
-          "date": "2024-12-09",
-          "amount": 300
-        },
-        {
-          "date": "2024-12-09",
-          "amount": 400
-        },
-        {
-          "date": "2024-12-09",
-          "amount": 30
+          "amount": 40,
+          "paper": 2267
         }
       ]
     },

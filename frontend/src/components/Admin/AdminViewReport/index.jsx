@@ -1,11 +1,8 @@
 import { useEffect, useState } from "react";
-// import ExportButton from "../../Officer/OfficerViewReport/ExportButton";
 import OfficerButton from "../AdminViewReport/ChooseOfficerButton";
 import StudentButton from "../AdminViewReport/ChooseStudentButton";
 import ViewStudentReport from "../AdminViewReport/StudentReport";
 import ViewOfficerReport from "../AdminViewReport/OfficerReport";
-// import StudentExport from "../../PopUp/StudentReportExport";
-// import PrinterExport from "../../PopUp/PrinterReportExport";
 import axios from "axios";
 
 const ViewReport = () => {
@@ -90,19 +87,7 @@ const ViewReport = () => {
     setEndDate(e.target.value);
   };
 
-  // const handleStudentIDChange = (e) => {
-  //   setStudentID(e.target.value);
-  // };
-
-  // const handleSearch = () => {
-  //   console.log("Searching for:", studentID, "From:", startDate, "To:", endDate);
-  // };
-
   const handleKeyDown = (e) => {
-    // if (e.key === "Enter") {
-    //   handleSearch();
-    // }
-    // console.log(e.target.value);
     setSearchBar(e.target.value);
   };
 
@@ -273,25 +258,9 @@ const ViewReport = () => {
             Search
           </button>
         </form>
-        {/* <div className="ml-[50px]">
-          <ExportButton onClick={() => setExportModalShow(true)} />
-        </div> */}
       </div>
 
-      {/* {selectedButton === "student" && (
-        <StudentExport
-          show={exportModalShow}
-          onClose={() => setExportModalShow(false)}
-        />
-      )}
-      {selectedButton === "officer" && (
-        <PrinterExport
-          show={exportModalShow}
-          onClose={() => setExportModalShow(false)}
-        />
-      )} */}
-
-      <div className="mt-[30px] flex-grow">
+      <div className="mt-[30px]">
         {selectedButton === "student" && (
           <ViewStudentReport
             studentList={filteredStudentList}

@@ -35,39 +35,15 @@ const StudentReport = ({
       console.error("Expected an array, but got:", documentList);
       setMatchDocs([]); // Clear matchDocs if data is not an array
     }
-
-    // const fetchData = async () => {
-    //   try {
-    //     const response = await axios.get(`http://localhost:3000/Document`);
-    //     console.log("Response Data:", response.data); // Debugging
-    //     const allDocs = response.data;
-  
-    //     if (Array.isArray(allDocs)) {
-    //       if (selectedStudent) {
-    //         const matchDocs = allDocs.filter((doc) => doc.studentID === selectedStudent.id);
-    //         setMatchDocs(matchDocs);
-    //       } else {
-    //         setMatchDocs([]); // Clear if no student is selected
-    //       }
-    //     } else {
-    //       console.error("Expected an array, but got:", allDocs);
-    //       setMatchDocs([]); // Clear matchDocs if data is not an array
-    //     }
-    //   } catch (err) {
-    //     console.error("Error fetching data:", err);
-    //   }
-    // };
-  
-    // fetchData();
   }, [selectedStudent, documentList]);
   
 
   return (
-    <div className="overflow-hidden">
-      <div className="flex items-start ml-[100px] mt-[30px] w-full h-full"> 
-        <div className="mt-[17px] mr-[50px]">
+    <div className="">
+      <div className="flex items-start mt-[30px] px-10 gap-[20px]"> 
+        <div className="flex-1 mt-[20px]">
           <span className="text-[18px] font-inter font-semibold"> Student List</span>
-          <div className="mt-[15px] w-[170px] h-[500px]">
+          <div className="mt-[15px] w-full h-[500px]">
             <List 
               studentList={studentList}
               setStudentList={setStudentList}
@@ -79,7 +55,7 @@ const StudentReport = ({
         
         {/* Render Print History table only if selectedStudent is available */}
         {selectedStudent && matchDocs && (
-          <div className="ml-[50px] w-[850px] h-full"> 
+          <div className="flex-[4] h-full"> 
             <Table  
               title={<span className="text-lg font-semibold">{`Print History`}</span>} 
               tableCol={["Date", "Finish Day", "File", "Printer", "Number of Paper"]} 
@@ -101,7 +77,7 @@ const StudentReport = ({
         {/* Render Purchase History table only if selectedStudent and selectedStudent.purchases are available */}
 
         {selectedStudent && purchases && purchases.length > 0 ? (
-          <div className="ml-[50px] w-[500px] h-full mr-[150px]">
+          <div className="flex-[3] h-full ">
             <Table
               title={<span className="text-lg font-semibold">{`Purchase History`}</span>}
               tableCol={["Date", "Number of Paper", "Total"]}
