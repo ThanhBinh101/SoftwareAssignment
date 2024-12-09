@@ -1,0 +1,341 @@
+{
+  "Student": [
+    {
+      "id": "2252083",
+      "name": "Cừu Non Nóng Tánh",
+      "password": "1",
+      "availablePaper": 10,
+      "purchases": [
+        {
+          "date": "2004-09-30",
+          "paper": 20,
+          "amount": 10000
+        },
+        {
+          "date": "2004-10-30",
+          "paper": 20,
+          "amount": 10000
+        },
+        {
+          "date": "2024-12-08",
+          "paper": 200,
+          "amount": 100000
+        },
+        {
+          "date": "2024-12-08",
+          "paper": 100,
+          "amount": 5000
+        },
+        {
+          "date": "2024-12-08",
+          "paper": 60,
+          "amount": 30000
+        },
+        {
+          "date": "2024-12-08",
+          "paper": 40,
+          "amount": 20000
+        },
+        {
+          "date": "2024-12-08",
+          "paper": 20,
+          "amount": 10000
+        },
+        {
+          "date": "2024-12-08",
+          "paper": 30,
+          "amount": 15000
+        }
+      ]
+    },
+    {
+      "id": "2252081",
+      "name": "Cừu Non Nóng Tánh",
+      "password": "1",
+      "availablePaper": 10,
+      "purchases": [
+        {
+          "date": "2024-09-30",
+          "paper": 100,
+          "amount": 10000
+        },
+        {
+          "date": "2024-10-30",
+          "paper": 100,
+          "amount": 10000
+        }
+      ]
+    }
+  ],
+  "Document": [
+    {
+      "id": "kfjq7d4xjxe8wg4t91",
+      "name": "HelloWorld.pdf",
+      "status": "printing",
+      "printDate": "2024-10-01",
+      "finishDate": "2024-10-01",
+      "paper": 10,
+      "studentID": "2252083",
+      "printerID": "306B1.1"
+    },
+    {
+      "id": "doc1",
+      "name": "Minna no nihongo.pdf",
+      "status": "printing",
+      "printDate": "2024-12-09",
+      "finishDate": "2024-12-12",
+      "paper": 12,
+      "studentID": "2252081",
+      "printerID": "306B1.3"
+    },
+    {
+      "id": "doc2",
+      "name": "Đề thi môn CNPM (Bảo mật).pdf",
+      "status": "printing",
+      "printDate": "2024-12-05",
+      "finishDate": "2025-12-05",
+      "paper": 20,
+      "studentID": "2252081",
+      "printerID": "306B1.1"
+    }
+  ],
+  "Printer": [
+    {
+      "id": "306B1.1",
+      "location": "306B1",
+      "status": "Using",
+      "paper": 125,
+      "queue": [],
+      "nextMaintain": "2004-01-10",
+      "maintains": [
+        {
+          "date": "2024-10-01",
+          "status": "Im not oke kinchana"
+        }
+      ],
+      "refillPaper": [
+        {
+          "date": "2024-10-01",
+          "amount": 10
+        },
+        {
+          "date": "2024-12-09",
+          "amount": 12
+        },
+        {
+          "date": "2024-12-09",
+          "amount": 12,
+          "paper": 112
+        },
+        {
+          "date": "2024-12-09",
+          "amount": 13,
+          "paper": 125
+        }
+      ],
+      "history": [
+        "kfjq7d4xjxe8wg4t91",
+        "doc2"
+      ],
+      "availablePaper": 0
+    },
+    {
+      "id": "306B1.2",
+      "location": "306B1",
+      "status": "On",
+      "paper": 100,
+      "queue": [],
+      "nextMaintain": "2024-12-25",
+      "maintains": [
+        {
+          "date": "2024-10-01",
+          "status": "Fix can not run"
+        },
+        {
+          "date": "2024-12-09",
+          "status": "Fix can not connect to computer"
+        }
+      ],
+      "history": [],
+      "availablePaper": 100,
+      "refillPaper": [
+        {
+          "date": "2024-10-01",
+          "amount": 10
+        },
+        {
+          "date": "2024-12-09",
+          "amount": 80
+        },
+        {
+          "date": "2024-12-09",
+          "amount": 80
+        },
+        {
+          "date": "2024-12-09",
+          "amount": 1000
+        },
+        {
+          "date": "2024-12-09",
+          "amount": 12
+        },
+        {
+          "date": "2024-12-09",
+          "amount": 12
+        },
+        {
+          "date": "2024-12-09",
+          "amount": 34314
+        }
+      ]
+    },
+    {
+      "id": "306B1.3",
+      "location": "306B1",
+      "status": "On",
+      "paper": 10,
+      "queue": [],
+      "nextMaintain": "2024-12-09",
+      "maintains": [
+        {
+          "date": "2024-10-01",
+          "status": "Im not oke kinchana"
+        }
+      ],
+      "history": [
+        "doc1"
+      ],
+      "availablePaper": 10,
+      "refillPaper": [
+        {
+          "date": "2024-10-01",
+          "amount": 10
+        }
+      ]
+    },
+    {
+      "id": "1",
+      "location": "1",
+      "status": "Off",
+      "paper": 0,
+      "queue": [],
+      "nextMaintain": "2004-01-10",
+      "maintains": [],
+      "availablePaper": 0,
+      "refillPaper": [],
+      "history": []
+    },
+    {
+      "id": "2",
+      "location": "1",
+      "status": "Off",
+      "paper": 0,
+      "queue": [],
+      "nextMaintain": "2004-01-10",
+      "maintains": [],
+      "availablePaper": 0,
+      "refillPaper": [],
+      "history": []
+    },
+    {
+      "id": "3",
+      "location": "3",
+      "status": "Off",
+      "paper": 0,
+      "queue": [],
+      "nextMaintain": "2004-01-10",
+      "maintains": [],
+      "availablePaper": 0,
+      "refillPaper": []
+    },
+    {
+      "id": "11010",
+      "location": "1",
+      "status": "Off",
+      "paper": 0,
+      "queue": [],
+      "nextMaintain": "2004-01-10",
+      "maintains": [],
+      "availablePaper": 0,
+      "refillPaper": [],
+      "history": []
+    },
+    {
+      "id": "12",
+      "location": "12",
+      "status": "Off",
+      "paper": 0,
+      "queue": [],
+      "nextMaintain": "2024-12-12",
+      "maintains": [],
+      "availablePaper": 0,
+      "refillPaper": [],
+      "history": []
+    }
+  ],
+  "Officer": [
+    {
+      "id": "8386",
+      "name": "Le Van A",
+      "password": "1",
+      "printers": [
+        "306B1.3",
+        "405B8.1",
+        "11010"
+      ]
+    },
+    {
+      "id": "1002",
+      "name": "Le Van B",
+      "password": "1",
+      "printers": [
+        "306B1.1",
+        "306B1.2",
+        "12"
+      ]
+    }
+  ],
+  "Admin": [
+    {
+      "accounts": [
+        {
+          "id": "22",
+          "password": "1",
+          "name": "Nguyen Thi Thanh Binh"
+        }
+      ],
+      "purchases": [
+        5000,
+        10000,
+        15000,
+        20000,
+        30000,
+        50000,
+        80000,
+        100000
+      ],
+      "format": [
+        {
+          "name": "PDF",
+          "allow": true
+        },
+        {
+          "name": "DOC/DOCX",
+          "allow": true
+        },
+        {
+          "name": "TXT",
+          "allow": true
+        },
+        {
+          "name": "JPEG/JPG",
+          "allow": true
+        }
+      ],
+      "nextRefill": "2024-12-20",
+      "paper": 1,
+      "price": 500,
+      "refillAmount": 100
+    }
+  ]
+}
