@@ -56,10 +56,6 @@ const ViewReport = () => {
   const handleSubmitForm = (e) => {
     e.preventDefault();
 
-    // if (!searchBar && !selectedPrinter) {
-    //   alert("Bạn chưa chọn máy in");
-    // }
-
     const startDateValue = startDate;
     const endDateValue = endDate;
     const searchValue = searchBar;

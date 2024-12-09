@@ -1,3 +1,7 @@
+import axios from "axios";
+
+
+
 export const BUTTON_USER_OVERVIEW = [
   {
     title: "Purchase",
@@ -6,16 +10,16 @@ export const BUTTON_USER_OVERVIEW = [
     link: "/purchase",
   },
   {
-    title: "Upload file",
+    title: "Add document real",
     backgroundColor: "primary",
     textColor: "secondary",
     link: "/upload",
   },
   {
-    title: "History",
+    title: "Add document lỏ",
     backgroundColor: "secondary",
     textColor: "white",
-    link: "/history",
+    link: "/document",
   },
 ];
 

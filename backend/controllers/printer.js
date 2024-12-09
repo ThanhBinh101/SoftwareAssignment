@@ -79,5 +79,33 @@ const addPrinter = async (req, res) => {
     }
 }
 
+const addQueue = async (req, res) => {
+  const docID = req.params.id;
+  const {location} = req.body;
+
+  const data = await fs.readFile(filePath, 'utf8');
+  try {
+    const db = JSON.parse(data);
+    const matchPrinters = db.Printer.some((p)=>p.location === location);
+    if(!matchPrinters) {
+      return res.status(404).json("Invalid Location");
+    }
+    const optimizePrinter = matchPrinters.increase((maxPrinter, currentPrinter) => {
+      return currentPrinter.queue.length < maxPrinter.queue.length ? currentPrinter : maxPrinter;
+    });
+
+    optimizePrinter.queue.push(docID);
+    const doc = db.Document.find((doc)=> doc.id === docID);
+    doc.status = "Printing";
+
+    await fs.writeFile(filePath, JSON.stringify(db, null, 2));
+    return res.status(201).json({ message: 'Printer added successfully', newPrinter });
+  } catch(err) {
+    console.error('Error handling printer:', err);
+      return res.status(500).json({ message: 'Error processing printer.', error: err.message });
+  }
+}
+
+
 module.exports = { deletePrinter , addPrinter};
   

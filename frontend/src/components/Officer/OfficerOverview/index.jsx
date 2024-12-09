@@ -29,11 +29,10 @@ const OfficerOverview = () => {
   
         setOfficerData(officer);
   
-        // Step 2: Fetch all printers
+        
         const printersResponse = await axios.get(`http://localhost:3000/Printer/`);
         const allPrinters = printersResponse.data;
   
-        // Step 3: Filter printers based on officer's printersID
         const matchingPrinters = allPrinters.filter((printer) =>
           officer.printers.includes(printer.id)
         );

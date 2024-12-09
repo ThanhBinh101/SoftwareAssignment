@@ -90,19 +90,7 @@ const ViewReport = () => {
     setEndDate(e.target.value);
   };
 
-  // const handleStudentIDChange = (e) => {
-  //   setStudentID(e.target.value);
-  // };
-
-  // const handleSearch = () => {
-  //   console.log("Searching for:", studentID, "From:", startDate, "To:", endDate);
-  // };
-
   const handleKeyDown = (e) => {
-    // if (e.key === "Enter") {
-    //   handleSearch();
-    // }
-    // console.log(e.target.value);
     setSearchBar(e.target.value);
   };
 

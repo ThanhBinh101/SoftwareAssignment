@@ -21,7 +21,7 @@ const TurnOffPrinterButton = ({id}) => {
   }, [status])
 
   const switchPrinter = async (e) => {
-    e.preventDefault(); // Prevent the default form submission behavior
+    e.preventDefault();
     if (!id) {
       setError("Printer ID is required.");
       return;

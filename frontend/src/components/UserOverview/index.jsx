@@ -8,8 +8,8 @@ const UserOverview = ({student}) => {
   const { availablePaper } = useAppContext();
 
   return (
-    <div className="mt-[80px] flex items-center justify-center">
-      <div className="mb-[120px] flex w-[1454px] justify-between gap-[100px] rounded-[25px] bg-thirdary p-[45px]">
+     <div className="mt-[80px] flex items-center justify-center">
+      {student &&<div className="mb-[120px] flex w-[1454px] justify-between gap-[100px] rounded-[25px] bg-thirdary p-[45px]">
         <UserAvatar
           imageUrl={"/user-logo-big.svg"}
           username={student.name}
@@ -21,7 +21,7 @@ const UserOverview = ({student}) => {
             Page(s) available: <span className="text-secondary">{availablePaper}</span>
           </h3>
 
-          <WaitPrintingTable />
+          <WaitPrintingTable id = {student.id}/>
 
           <UserOverviewButtonList id={student.id}/>
 
@@ -30,7 +30,7 @@ const UserOverview = ({student}) => {
             refillDate={"January 10th, 2024"}
           />
         </div>
-      </div>
+      </div>}
     </div>
   );
 };

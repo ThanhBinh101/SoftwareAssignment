@@ -71,10 +71,28 @@
     {
       "id": "kfjq7d4xjxe8wg4t91",
       "name": "HelloWorld.pdf",
-      "status": "printing",
+      "status": "pending",
+      "printDate": "2024-10-01",
+      "finishDate": "",
+      "paper": 10,
+      "studentID": "2252083"
+    },
+    {
+      "id": "kfjq7d4xjxe8wg4t93",
+      "name": "BeloWorld.pdf",
+      "status": "complete",
       "printDate": "2024-10-01",
       "finishDate": "2024-10-01",
       "paper": 10,
+      "studentID": "2252083"
+    },
+    {
+      "id": "bp2utn46gci",
+      "name": "wer",
+      "status": "complete",
+      "printDate": "2024-12-09",
+      "finishDate": "2024-12-09",
+      "paper": 12,
       "studentID": "2252083"
     }
   ],
@@ -83,7 +101,7 @@
       "id": "306B1.1",
       "location": "306B1",
       "status": "Using",
-      "paper": 300,
+      "paper": 388,
       "queue": [],
       "nextMaintain": "2004-01-10",
       "maintains": [
@@ -100,11 +118,16 @@
         {
           "date": "2024-12-09",
           "amount": 12
+        },
+        {
+          "date": "2024-12-09",
+          "amount": 100
         }
       ],
       "history": [
         "kfjq7d4xjxe8wg4t91",
-        "kfjq7d4xjxe8wg4t91"
+        "kfjq7d4xjxe8wg4t91",
+        "bp2utn46gci"
       ],
       "availablePaper": null
     },
@@ -114,7 +137,7 @@
       "status": "On",
       "paper": 36026,
       "queue": [],
-      "nextMaintain": "2024-12-25",
+      "nextMaintain": "2024-12-19",
       "maintains": [
         {
           "date": "2024-10-01",
@@ -123,6 +146,10 @@
         {
           "date": "2024-12-09",
           "status": "afewf"
+        },
+        {
+          "date": "2024-12-09",
+          "status": "im chill"
         }
       ],
       "availablePaper": 1712,
@@ -223,14 +250,13 @@
       "refillPaper": []
     },
     {
-      "id": "12",
-      "location": "12",
+      "id": "efgh",
+      "location": "Ned",
       "status": "Off",
       "paper": 0,
       "queue": [],
-      "nextMaintain": "2024-12-12",
+      "nextMaintain": "2024-12-11",
       "maintains": [],
-      "availablePaper": 0,
       "refillPaper": []
     }
   ],
@@ -242,7 +268,8 @@
       "printers": [
         "306B1.3",
         "405B8.1",
-        "11010"
+        "11010",
+        "efgh"
       ]
     },
     {
@@ -251,8 +278,7 @@
       "password": "1",
       "printers": [
         "306B1.1",
-        "306B1.2",
-        "12"
+        "306B1.2"
       ]
     }
   ],

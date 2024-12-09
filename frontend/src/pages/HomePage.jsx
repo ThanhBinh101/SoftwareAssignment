@@ -8,7 +8,7 @@ import axios from "axios";
 
 function HomePage() {
   const { id } = useParams();
-  const [studentData, setStudentData] = useState(null);
+  const [studentData, setStudentData] = useState("");
   const [history, setHistory] = useState([]);
 
   useEffect(() => {
@@ -18,20 +18,15 @@ function HomePage() {
         setStudentData(response.data);
 
         const allDocs = (await axios.get(`http://localhost:3000/Document`)).data;
-        const matchings = allDocs.filter((doc) => 
-          studentData.some((item) => item.id === doc.studentID) 
-        );
+        const matchings = allDocs.filter((doc) => doc.studentID === id);
         setHistory[matchings];
-
       } catch (err) {
-        console.error("Error fetching data:", err);
-        setError("Failed to fetch data.");
+        console.error("Error fetching data:", err.message);
       }
     };
 
       fetchStudent();
     }, [id]);
-
 
   return (
     <>

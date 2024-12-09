@@ -2,6 +2,8 @@ const fs = require('fs/promises');
 const path = require('path');
 const filePath = path.join(__dirname, '../../frontend/db.json');
 
+const {addQueue} = require('./printer');
+
 const addPurchase = async (req, res) => {
     const { date, paper, amount , id} = req.body;
 
