@@ -161,13 +161,21 @@
       "id": "306B1.3",
       "location": "306B1",
       "status": "On",
-      "paper": 300,
+      "paper": 1735,
       "queue": [],
-      "nextMaintain": "2004-01-10",
+      "nextMaintain": "2024-08-09",
       "maintains": [
         {
           "date": "2024-10-01",
           "status": "Im not oke kinchana"
+        },
+        {
+          "date": "2024-12-09",
+          "status": "hello"
+        },
+        {
+          "date": "2024-12-09",
+          "status": "hello"
         }
       ],
       "availablePaper": 10,
@@ -175,6 +183,74 @@
         {
           "date": "2024-10-01",
           "amount": 10
+        },
+        {
+          "date": "2024-12-09",
+          "amount": 10
+        },
+        {
+          "date": "2024-12-09",
+          "amount": 20
+        },
+        {
+          "date": "2024-12-09",
+          "amount": 20
+        },
+        {
+          "date": "2024-12-09",
+          "amount": 30
+        },
+        {
+          "date": "2024-12-09",
+          "amount": 10
+        },
+        {
+          "date": "2024-12-09",
+          "amount": 1
+        },
+        {
+          "date": "2024-12-09",
+          "amount": 2
+        },
+        {
+          "date": "2024-12-09",
+          "amount": 2
+        },
+        {
+          "date": "2024-12-09",
+          "amount": 5
+        },
+        {
+          "date": "2024-12-09",
+          "amount": 5
+        },
+        {
+          "date": "2024-12-09",
+          "amount": 100
+        },
+        {
+          "date": "2024-12-09",
+          "amount": 100
+        },
+        {
+          "date": "2024-12-09",
+          "amount": 200
+        },
+        {
+          "date": "2024-12-09",
+          "amount": 200
+        },
+        {
+          "date": "2024-12-09",
+          "amount": 300
+        },
+        {
+          "date": "2024-12-09",
+          "amount": 400
+        },
+        {
+          "date": "2024-12-09",
+          "amount": 30
         }
       ]
     },

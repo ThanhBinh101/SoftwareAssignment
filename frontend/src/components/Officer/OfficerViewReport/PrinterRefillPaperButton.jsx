@@ -3,7 +3,17 @@ import Button from "../../Button";
 import React, { useState } from "react";
 import axios from "axios";
 
-const PrinterRefillPaperButton = ({ id }) => {
+const PrinterRefillPaperButton = ({
+  selectedPrinter,
+  setSelectedPrinter,
+  setStartDate,
+  setEndDate,
+  printerList,
+  setPrinterList,
+  filteredPrinterList,
+  setFilteredPrinterList,
+  id,
+}) => {
   const [showPopUp, setshowPopup] = useState(false);
   const [amount, setAmount] = useState(0);
   const [loading, setLoading] = useState(false);
@@ -17,8 +27,27 @@ const PrinterRefillPaperButton = ({ id }) => {
     }
     setLoading(true); // Set loading state
     try {
-      const response = await axios.post(`http://localhost:8386/refillPaper/${id}`, { amount: parseInt(amount, 10) });
+      const response = await axios.post(
+        `http://localhost:8386/refillPaper/${id}`,
+        { amount: parseInt(amount, 10) },
+      );
       console.log("Refill added:", response.data);
+      const data = response.data.newRefill;
+
+      const currentPrinter = printerList.find((item) => item.id === id);
+      currentPrinter.refillPaper.push(data);
+
+      const currentPrinterChange = JSON.parse(JSON.stringify(currentPrinter));
+
+      // console.log({printerList});
+      // console.log({filteredPrinterList});
+
+      // setPrinterList(printerList);
+      // setFilteredPrinterList(printerList);
+      setSelectedPrinter(currentPrinterChange);
+      setStartDate("");
+      setEndDate("");
+
       setshowPopup(false);
       setError(""); // Clear error message
     } catch (err) {
@@ -44,40 +73,45 @@ const PrinterRefillPaperButton = ({ id }) => {
       </div>
 
       {showPopUp && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
-          <div className="bg-white rounded-lg p-8 w-1/3">
-            <h2 className="text-center text-xl font-bold mb-4">Add Printer</h2>
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="w-1/3 rounded-lg bg-white p-8">
+            <h2 className="mb-4 text-center text-xl font-bold">Refill Paper</h2>
 
             <form onSubmit={handleAddRefill}>
               <div className="mb-4">
-                <label htmlFor="id" className="block text-sm font-medium text-gray-700">
-                  Printer ID
+                <label
+                  htmlFor="id"
+                  className="block text-sm font-medium text-gray-700"
+                >
+                  Number of pages
                 </label>
                 <input
                   type="number"
                   id="amount"
                   value={amount}
                   onChange={(e) => setAmount(e.target.value)}
-                  className="mt-1 p-2 w-full border rounded"
+                  className="mt-1 w-full rounded border p-2"
                   required
                 />
               </div>
-              {error && <div className="text-red-500 text-sm mb-4">{error}</div>}
+              {error && (
+                <div className="mb-4 text-sm text-red-500">{error}</div>
+              )}
 
               <div className="flex justify-between">
                 <button
                   type="button"
                   onClick={() => setshowPopup(false)} // Corrected: Wrap in a function
-                  className="bg-gray-300 text-gray-700 p-2 rounded"
+                  className="rounded bg-gray-300 p-2 text-gray-700"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
-                  className="bg-green-500 text-white p-2 rounded"
+                  className="rounded bg-green-500 p-2 text-white"
                   disabled={loading}
                 >
-                  {loading ? "Adding..." : "Add Printer"}
+                  {loading ? "Adding..." : "Add Pages"}
                 </button>
               </div>
             </form>

@@ -46,7 +46,7 @@ export const BUTTON_MAINTAIN = [{
 export const BUTTON_REFILL_PAPER = [
   {
     title: "Refill paper",
-    backgroundColor: "primary",
+    backgroundColor: "success",
     textColor:"white"
   }
 ]

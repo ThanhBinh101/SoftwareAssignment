@@ -35,18 +35,18 @@ const ViewReport = () => {
   // const handleStudentIDChange = (e) => setStudentID(e.target.value);
   // const handleSearch = () => console.log("Searching for:", studentID);
 
-  const handleSearch = (e) => {
-    setSearchBar(e.target.value);
-    // if (e.key === "Enter") handleSearch();
-  };
+  // const handleSearch = (e) => {
+  //   setSearchBar(e.target.value);
+  //   // if (e.key === "Enter") handleSearch();
+  // };
 
   // const handleExportClick = () => setExportModalShow(true);
   // const handleExportClose = () => setExportModalShow(false);
 
-  const handleMaintainClick = () => {
-    console.log("Maintain button clicked");
-    setMaintainModalShow(true);
-  };
+  // const handleMaintainClick = () => {
+  //   console.log("Maintain button clicked");
+  //   setMaintainModalShow(true);
+  // };
 
   const handleMaintainClose = () => {
     console.log("Closing maintain modal");
@@ -74,12 +74,12 @@ const ViewReport = () => {
         printer.maintains = printer.maintains.filter((item) => {
           const maintainDate = new Date(item.date);
           return maintainDate >= start && maintainDate <= end;
-        })
+        });
 
         printer.refillPaper = printer.refillPaper.filter((item) => {
           const refillDate = new Date(item.date);
           return refillDate >= start && refillDate <= end;
-        })
+        });
       }
       setFilteredPrinterList(tempPrinterList);
 
@@ -92,14 +92,14 @@ const ViewReport = () => {
       const tempRefillHis = refillHis.filter((item) => {
         const refillDate = new Date(item.date);
         return refillDate >= start && refillDate <= end;
-      })
+      });
       setFilteredRefillHis(tempRefillHis);
 
-      console.log({matchingDocs});
+      console.log({ matchingDocs });
       const tempMatchingDocs = matchingDocs.filter((item) => {
         const date = new Date(item.printDate);
         return date >= start && date <= end;
-      })
+      });
       console.log(tempMatchingDocs);
       setFilteredMatchingDocs(tempMatchingDocs);
     }
@@ -166,11 +166,7 @@ const ViewReport = () => {
             (doc) => history.some((item) => item === doc.id), // Compare item.documentID with doc.id
           );
           setMatchingDocs(matchings); // Set the filtered documents
-          setMaintainHis(selectedPrinter.maintains);
-          setRefillHis(selectedPrinter.refillPaper);
           setFilteredMatchingDocs(matchings);
-          setFilteredMaintainHis(selectedPrinter.maintains);
-          setFilteredRefillHis(selectedPrinter.refillPaper);
         } catch (err) {
           console.error("Error fetching printer history:", err);
         }
@@ -180,6 +176,16 @@ const ViewReport = () => {
     fetchPrinterHistory();
   }, [selectedPrinter]);
 
+  useEffect(() => {
+    console.log({selectedPrinter})
+    if (selectedPrinter) {
+      setMaintainHis(selectedPrinter.maintains);
+      setRefillHis(selectedPrinter.refillPaper);
+      setFilteredMaintainHis(selectedPrinter.maintains);
+      setFilteredRefillHis(selectedPrinter.refillPaper);
+    }
+  }, [selectedPrinter]);
+
   return (
     <div className="overflow-hidden">
       <div className="mt-[30px] flex items-center justify-center">
@@ -187,7 +193,6 @@ const ViewReport = () => {
       </div>
 
       <div className="mt-[30px] flex justify-center">
-        
         <form onSubmit={handleSubmitForm} action="" className="flex">
           <div className="ml-[30px] mr-[10px] mt-[10px]">
             <span className="font-Ubuntu text-[18px]">From</span>
@@ -207,7 +212,12 @@ const ViewReport = () => {
             onChange={handleEndDateChange}
             className="h-[48px] w-[180px] rounded-[16px] border border-[#A68BC1] bg-[#A68BC133] p-2"
           />
-          <button type="submit" className="ml-[20px] h-[48px] w-[180px] rounded-[16px] border border-[#A68BC1] bg-[#A68BC133] text-[18px]">Search</button>
+          <button
+            type="submit"
+            className="ml-[20px] h-[48px] w-[180px] rounded-[16px] border border-[#A68BC1] bg-[#A68BC133] text-[18px]"
+          >
+            Search
+          </button>
         </form>
 
         {/* <div className="ml-[50px]">
@@ -217,12 +227,12 @@ const ViewReport = () => {
         <PrinterExport show={exportModalShow} onClose={handleExportClose} /> */}
       </div>
 
-      <div className="ml-[30px] mt-[30px] flex h-full w-full">
-        <div className="mt-[20px]">
+      <div className="mt-[30px] flex h-full w-full gap-[20px] px-10">
+        <div className="mt-[20px] flex-[1]">
           <span className="font-inter text-[18px] font-semibold">
             Printer List
           </span>
-          <div className="mt-[30px] h-[500px] w-[170px]">
+          <div className="mt-[30px] h-[500px] w-full">
             <PrinterList
               officer={officer}
               setOfficer={setOfficer}
@@ -236,61 +246,76 @@ const ViewReport = () => {
           </div>
         </div>
 
-        <div className="ml-[50px] mr-[30px] mt-[30px]">
-          <div className="mt-[20px] flex h-[669px] w-[360px] justify-center rounded-[30px] border-2 border-[#A68BC1] bg-[#FFEEE8]">
-            
-            {selectedPrinter ? <div className="mt-[50px]">
-              <div className="mb-[20px] text-2xl font-bold">
-                <span className="underline">Location:</span>
-                <span> </span>
-                <span className="text-[#A68BC1]">
-                  {selectedPrinter ? selectedPrinter.id : "No printer"}
-                </span>
-              </div>
-              <div className="mb-[20px] text-2xl font-bold">
-                <span className="underline">Next maintain day:</span>
-                <span> </span>
-                <span className="text-[#A68BC1]">{selectedPrinter.nextMaintain}</span>
-              </div>
-              <div className="mb-[20px] text-2xl font-bold">
-                <span className="underline">Available paper:</span>
-                <span> </span>
-                <span className="text-[#A68BC1]">
-                  {" "}
-                  {selectedPrinter ? selectedPrinter.paper : ""}
-                </span>
-              </div>
-              <div className="mb-[20px] text-2xl font-bold">
-                <span className="underline">Status:</span>
-                <span> </span>
-                <span className="text-[#A68BC1]">
-                  {selectedPrinter ? selectedPrinter.status : ""}
-                </span>
-              </div>
-              <div className="mb-[50px] mt-[150px]">
-                <div className="flex w-full flex-col items-center">
-                  <div className="mt-[25px] flex h-[52px] w-[245px] items-center justify-center rounded-[25px] bg-[#97D99D] text-xl">
-                  <PrinterRefillPaperButton id={selectedPrinter.id}/>
-                  </div>
-                  <div className="mt-[25px] flex h-[52px] w-[245px] items-center justify-center rounded-[25px] bg-[#FEC8D8] text-xl">
-                    <PrinterMaintainButton id={selectedPrinter.id} />
-                  </div>
-                  <MaintainPrinter
-                    show={maintainModalShow}
-                    onClose={handleMaintainClose}
-                    printerCode={selectedPrinter}
-                    time="10:00 AM ngày 2/11/2024"
-                  />
-                  <div className="mt-[25px] flex h-[52px] w-[245px] items-center justify-center rounded-[25px] bg-[#A68BC1] text-xl">
-                    <TurnOffPrinterButton id = {selectedPrinter.id} />
+        <div className="mt-[30px] flex-[3]">
+          <div className="mt-[20px] flex w-full justify-center rounded-[30px] border-2 border-[#A68BC1] bg-[#FFEEE8] px-2">
+            {selectedPrinter ? (
+              <div className="mt-[50px]">
+                <div className="mb-[20px] text-xl font-bold">
+                  <span className="underline">Location:</span>
+                  <span> </span>
+                  <span className="text-[#A68BC1]">
+                    {selectedPrinter ? selectedPrinter.id : "No printer"}
+                  </span>
+                </div>
+                <div className="mb-[20px] text-xl font-bold">
+                  <span className="underline">Next maintain day:</span>
+                  <span> </span>
+                  <span className="text-[#A68BC1]">
+                    {selectedPrinter.nextMaintain}
+                  </span>
+                </div>
+                <div className="mb-[20px] text-xl font-bold">
+                  <span className="underline">Available paper:</span>
+                  <span> </span>
+                  <span className="text-[#A68BC1]">
+                    {" "}
+                    {selectedPrinter ? selectedPrinter.paper : ""}
+                  </span>
+                </div>
+                <div className="mb-[20px] text-xl font-bold">
+                  <span className="underline">Status:</span>
+                  <span> </span>
+                  <span className="text-[#A68BC1]">
+                    {selectedPrinter ? selectedPrinter.status : ""}
+                  </span>
+                </div>
+                <div className="mb-[50px] mt-[50px]">
+                  <div className="flex w-full flex-col items-center">
+                    <div className="mt-[25px] flex h-[52px] w-[245px] items-center justify-center rounded-[25px] bg-[#97D99D] text-xl">
+                      <PrinterRefillPaperButton
+                        selectedPrinter={selectedPrinter}
+                        setSelectedPrinter={setSelectedPrinter}
+                        setStartDate={setStartDate}
+                        setEndDate={setEndDate}
+                        printerList={printerList}
+                        setPrinterList={setPrinterList}
+                        filteredPrinterList={filteredPrinterList}
+                        setFilteredPrinterList={setFilteredPrinterList}
+                        id={selectedPrinter.id}
+                      />
+                    </div>
+                    <div className="mt-[25px] flex h-[52px] w-[245px] items-center justify-center rounded-[25px] bg-[#FEC8D8] text-xl">
+                      <PrinterMaintainButton id={selectedPrinter.id} />
+                    </div>
+                    <MaintainPrinter
+                      show={maintainModalShow}
+                      onClose={handleMaintainClose}
+                      printerCode={selectedPrinter}
+                      time="10:00 AM ngày 2/11/2024"
+                    />
+                    <div className="mt-[25px] flex h-[52px] w-[245px] items-center justify-center rounded-[25px] bg-[#A68BC1] text-xl">
+                      <TurnOffPrinterButton id={selectedPrinter.id} />
+                    </div>
                   </div>
                 </div>
               </div>
-            </div> : <div>"Select Printer"</div> }
+            ) : (
+              <div>"Select Printer"</div>
+            )}
           </div>
         </div>
 
-        <div className="w-[720px]">
+        <div className="w-[720px] flex-[6]">
           <Table
             title={
               <span className="text-lg font-semibold">{`Printer History`}</span>
@@ -316,14 +341,17 @@ const ViewReport = () => {
           />
         </div>
 
-        <div className="ml-[20px] h-full">
+        <div className="h-full flex-[2]">
           <div className="h-[278px] w-[380px]">
             <Table
               title={
                 <span className="text-lg font-semibold">{`Maintain History`}</span>
               }
               tableCol={["Day", "Status"]}
-              tableRow={filteredMaintainHis.map((item) => [item.date, item.status])}
+              tableRow={filteredMaintainHis.map((item) => [
+                item.date,
+                item.status,
+              ])}
               bgColor={"white"}
               titleColor={"black"}
               rowTextColor={"#A68BC1"}
@@ -336,7 +364,10 @@ const ViewReport = () => {
                 <span className="text-lg font-semibold">{`Refill History`}</span>
               }
               tableCol={["Day", "Number"]}
-              tableRow={filteredRefillHis.map((item) => [item.date, item.amount])}
+              tableRow={filteredRefillHis.map((item) => [
+                item.date,
+                item.amount,
+              ])}
               bgColor="#FFEEE8"
               titleColor={"black"}
               rowTextColor={"#A68BC1"}
