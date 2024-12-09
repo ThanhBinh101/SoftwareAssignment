@@ -24,11 +24,7 @@ const deletePrinter = async (req, res) => {
     const officerPrinterOwner = db.Officer.find((officer) => officer.printers.includes(printerId));
 
     officerPrinterOwner.printers = officerPrinterOwner.printers.filter((printer) => printer !== printerId);
-
-    // Remove the printer
     db.Printer.splice(printerIndex, 1);
-
-    // Write updated data back to the file
     await fs.writeFile(filePath, JSON.stringify(db, null, 2));
     res.status(200).json({ message: `Printer ${printerId} deleted successfully` });
     return;
@@ -52,10 +48,11 @@ const addPrinter = async (req, res) => {
       location: location,
       status: status || 'Off',
       paper: paper || 0,
-      queue: queue || [],
+      queue: [],
       nextMaintain: nextMaintain,
-      maintains: maintains || [],
-      refillPaper: refillPaper || [],
+      maintains: [],
+      paper: 0,
+      refillPaper: [],
     };
   
     try {

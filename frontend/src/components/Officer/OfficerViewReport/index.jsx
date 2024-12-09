@@ -135,7 +135,6 @@ const ViewReport = () => {
         console.log(error);
       }
     };
-
     fetchOfficerData();
   }, [id]);
 
@@ -190,26 +189,6 @@ const ViewReport = () => {
       <div className="mt-[30px] flex justify-center">
         
         <form onSubmit={handleSubmitForm} action="" className="flex">
-          {/* <div className="mr-[10px] mt-[10px]">
-            <span className="font-Ubuntu text-[18px]">Search</span>
-          </div>
-          <div className="relative w-[431px]">
-            <input
-              type="text"
-              placeholder=""
-              className="h-[48px] w-full rounded-[16px] border border-[#A68BC1] p-2"
-              value={searchBar}
-              onChange={handleSearch}
-              // onChange={handleStudentIDChange}
-              // onKeyDown={handleKeyDown}
-            />
-            <img
-              src="/Search_alt_fill.svg"
-              alt="Search icon"
-              className="absolute right-[10px] top-1/2 h-6 w-6 -translate-y-[14px] transform cursor-pointer"
-              // onClick={handleSearch}
-            />
-          </div> */}
           <div className="ml-[30px] mr-[10px] mt-[10px]">
             <span className="font-Ubuntu text-[18px]">From</span>
           </div>
@@ -259,7 +238,8 @@ const ViewReport = () => {
 
         <div className="ml-[50px] mr-[30px] mt-[30px]">
           <div className="mt-[20px] flex h-[669px] w-[360px] justify-center rounded-[30px] border-2 border-[#A68BC1] bg-[#FFEEE8]">
-            <div className="mt-[50px]">
+            
+            {selectedPrinter ? <div className="mt-[50px]">
               <div className="mb-[20px] text-2xl font-bold">
                 <span className="underline">Location:</span>
                 <span> </span>
@@ -270,7 +250,7 @@ const ViewReport = () => {
               <div className="mb-[20px] text-2xl font-bold">
                 <span className="underline">Next maintain day:</span>
                 <span> </span>
-                <span className="text-[#A68BC1]">Jan 10th</span>
+                <span className="text-[#A68BC1]">{selectedPrinter.nextMaintain}</span>
               </div>
               <div className="mb-[20px] text-2xl font-bold">
                 <span className="underline">Available paper:</span>
@@ -289,25 +269,24 @@ const ViewReport = () => {
               </div>
               <div className="mb-[50px] mt-[150px]">
                 <div className="flex w-full flex-col items-center">
-                  {selectedPrinter && <div className="mt-[25px] flex h-[52px] w-[245px] items-center justify-center rounded-[25px] bg-[#97D99D] text-xl">
+                  <div className="mt-[25px] flex h-[52px] w-[245px] items-center justify-center rounded-[25px] bg-[#97D99D] text-xl">
                   <PrinterRefillPaperButton id={selectedPrinter.id}/>
-                  </div>}
-                  
-                  {selectedPrinter && <div className="mt-[25px] flex h-[52px] w-[245px] items-center justify-center rounded-[25px] bg-[#FEC8D8] text-xl">
+                  </div>
+                  <div className="mt-[25px] flex h-[52px] w-[245px] items-center justify-center rounded-[25px] bg-[#FEC8D8] text-xl">
                     <PrinterMaintainButton id={selectedPrinter.id} />
-                  </div>}
+                  </div>
                   <MaintainPrinter
                     show={maintainModalShow}
                     onClose={handleMaintainClose}
                     printerCode={selectedPrinter}
                     time="10:00 AM ngày 2/11/2024"
                   />
-                  {selectedPrinter && <div className="mt-[25px] flex h-[52px] w-[245px] items-center justify-center rounded-[25px] bg-[#A68BC1] text-xl">
-                    <TurnOffPrinterButton onClick={handleTurnOffPrinter} />
-                  </div>}
+                  <div className="mt-[25px] flex h-[52px] w-[245px] items-center justify-center rounded-[25px] bg-[#A68BC1] text-xl">
+                    <TurnOffPrinterButton id = {selectedPrinter.id} />
+                  </div>
                 </div>
               </div>
-            </div>
+            </div> : <div>"Select Printer"</div> }
           </div>
         </div>
 

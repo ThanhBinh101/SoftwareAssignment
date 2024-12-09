@@ -4,7 +4,7 @@
       "id": "2252083",
       "name": "Cừu Non Nóng Tánh",
       "password": "1",
-      "availablePaper": "10",
+      "availablePaper": 10,
       "purchases": [
         {
           "date": "2004-09-30",
@@ -52,7 +52,7 @@
       "id": "2252081",
       "name": "Cừu Non Nóng Tánh",
       "password": "1",
-      "availablePaper": "10",
+      "availablePaper": 10,
       "purchases": [
         {
           "date": "2024-09-30",
@@ -96,18 +96,23 @@
         {
           "date": "2024-10-01",
           "amount": 10
+        },
+        {
+          "date": "2024-12-09",
+          "amount": 12
         }
       ],
       "history": [
         "kfjq7d4xjxe8wg4t91",
         "kfjq7d4xjxe8wg4t91"
-      ]
+      ],
+      "availablePaper": null
     },
     {
       "id": "306B1.2",
       "location": "306B1",
       "status": "On",
-      "paper": 300,
+      "paper": 36026,
       "queue": [],
       "nextMaintain": "2024-12-25",
       "maintains": [
@@ -120,6 +125,7 @@
           "status": "afewf"
         }
       ],
+      "availablePaper": 1712,
       "refillPaper": [
         {
           "date": "2024-10-01",
@@ -135,7 +141,19 @@
         },
         {
           "date": "2024-12-09",
-          "amount": 1234
+          "amount": 1000
+        },
+        {
+          "date": "2024-12-09",
+          "amount": 12
+        },
+        {
+          "date": "2024-12-09",
+          "amount": 12
+        },
+        {
+          "date": "2024-12-09",
+          "amount": 34314
         }
       ]
     },
@@ -152,6 +170,7 @@
           "status": "Im not oke kinchana"
         }
       ],
+      "availablePaper": 10,
       "refillPaper": [
         {
           "date": "2024-10-01",
@@ -167,6 +186,7 @@
       "queue": [],
       "nextMaintain": "2004-01-10",
       "maintains": [],
+      "availablePaper": 0,
       "refillPaper": []
     },
     {
@@ -177,6 +197,7 @@
       "queue": [],
       "nextMaintain": "2004-01-10",
       "maintains": [],
+      "availablePaper": 0,
       "refillPaper": []
     },
     {
@@ -187,6 +208,7 @@
       "queue": [],
       "nextMaintain": "2004-01-10",
       "maintains": [],
+      "availablePaper": 0,
       "refillPaper": []
     },
     {
@@ -197,6 +219,7 @@
       "queue": [],
       "nextMaintain": "2004-01-10",
       "maintains": [],
+      "availablePaper": 0,
       "refillPaper": []
     },
     {
@@ -207,6 +230,7 @@
       "queue": [],
       "nextMaintain": "2024-12-12",
       "maintains": [],
+      "availablePaper": 0,
       "refillPaper": []
     }
   ],
