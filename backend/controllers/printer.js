@@ -40,7 +40,7 @@ const deletePrinter = async (req, res) => {
 
 const addPrinter = async (req, res) => {
 
-  const { id, location, officerID, status, paper, queue, maintains, refillPaper } = req.body;
+  const { id, location, officerID, status, paper, queue, nextMaintain, maintains, refillPaper } = req.body;
   
   // Ensure required fields are present
   if (!id || !location || !officerID) {
@@ -53,6 +53,7 @@ const addPrinter = async (req, res) => {
       status: status || 'Off',
       paper: paper || 0,
       queue: queue || [],
+      nextMaintain: nextMaintain,
       maintains: maintains || [],
       refillPaper: refillPaper || [],
     };

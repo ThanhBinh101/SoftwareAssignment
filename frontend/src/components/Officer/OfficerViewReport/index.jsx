@@ -290,7 +290,7 @@ const ViewReport = () => {
               <div className="mb-[50px] mt-[150px]">
                 <div className="flex w-full flex-col items-center">
                   <div className="mt-[25px] flex h-[52px] w-[245px] items-center justify-center rounded-[25px] bg-[#97D99D] text-xl">
-                    <PrinterRefillPaperButton />
+                  {selectedPrinter ? <PrinterRefillPaperButton id={selectedPrinter.id}/>: "Select Printer"}
                   </div>
                   <div className="mt-[25px] flex h-[52px] w-[245px] items-center justify-center rounded-[25px] bg-[#FEC8D8] text-xl">
                     <PrinterMaintainButton onClick={handleMaintainClick} />

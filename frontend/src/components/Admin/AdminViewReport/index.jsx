@@ -12,9 +12,7 @@ const ViewReport = () => {
   const [selectedButton, setSelectedButton] = useState(null);
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
-  // const [studentID, setStudentID] = useState("");
   const [searchBar, setSearchBar] = useState("");
-  // const [exportModalShow, setExportModalShow] = useState(false);
   const [studentList, setStudentList] = useState([]); //Danh sách sinh viên
   const [officerList, setOfficerList] = useState([]); //Danh sách nhân viên
   const [printerList, setPrinterList] = useState([]); //Danh sách máy in
@@ -36,7 +34,6 @@ const ViewReport = () => {
         console.log(error);
       }
     };
-
     fetchStudentData();
   }, []);
 

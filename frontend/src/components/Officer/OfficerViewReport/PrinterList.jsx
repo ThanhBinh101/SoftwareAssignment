@@ -59,7 +59,6 @@ const PrinterList = ({
   }, [officer, printerList]); // Use the dependency array to fetch data when the ID changes
 
   const handleSelect = (printer) => {
-    console.log(printer);
     setSelectedPrinter(printer); // Store only the ID
     setStartDate("");
     setEndDate("");

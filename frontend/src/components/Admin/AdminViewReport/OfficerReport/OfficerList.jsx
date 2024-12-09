@@ -58,26 +58,6 @@ const List = ({
     } else {
       setPrinterData([]);
     }
-
-    // const fetchPrinterData = async () => {
-    //   if (selectedOfficer) {
-    //     try {
-    //       const allPrinters = (await axios.get("http://localhost:3000/Printer")).data;
-    //       if(selectedOfficer.printers) {
-    //           const filteredPrinters = allPrinters.filter((printer) =>
-    //           selectedOfficer.printers.includes(printer.id)
-    //         );
-    //         setPrinterData(filteredPrinters);
-    //       }
-
-    //     } catch (err) {
-    //       console.error("Error fetching printer data:", err);
-    //     }
-    //   } else {
-    //     setPrinterData([]);
-    //   }
-    // };
-    // fetchPrinterData();
   }, [selectedOfficer, printerList]);
 
   useEffect(() => {

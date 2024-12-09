@@ -85,6 +85,7 @@
       "status": "Using",
       "paper": 300,
       "queue": [],
+      "nextMaintain": "2004-01-10",
       "maintains": [
         {
           "date": "2024-10-01",
@@ -108,6 +109,7 @@
       "status": "On",
       "paper": 300,
       "queue": [],
+      "nextMaintain": "2004-01-10",
       "maintains": [
         {
           "date": "2024-10-01",
@@ -118,6 +120,14 @@
         {
           "date": "2024-10-01",
           "amount": 10
+        },
+        {
+          "date": "2024-12-09",
+          "amount": 80
+        },
+        {
+          "date": "2024-12-09",
+          "amount": 80
         }
       ]
     },
@@ -127,6 +137,7 @@
       "status": "On",
       "paper": 300,
       "queue": [],
+      "nextMaintain": "2004-01-10",
       "maintains": [
         {
           "date": "2024-10-01",
@@ -146,6 +157,7 @@
       "status": "Off",
       "paper": 0,
       "queue": [],
+      "nextMaintain": "2004-01-10",
       "maintains": [],
       "refillPaper": []
     },
@@ -155,6 +167,7 @@
       "status": "Off",
       "paper": 0,
       "queue": [],
+      "nextMaintain": "2004-01-10",
       "maintains": [],
       "refillPaper": []
     },
@@ -164,6 +177,7 @@
       "status": "Off",
       "paper": 0,
       "queue": [],
+      "nextMaintain": "2004-01-10",
       "maintains": [],
       "refillPaper": []
     },
@@ -173,6 +187,17 @@
       "status": "Off",
       "paper": 0,
       "queue": [],
+      "nextMaintain": "2004-01-10",
+      "maintains": [],
+      "refillPaper": []
+    },
+    {
+      "id": "12",
+      "location": "12",
+      "status": "Off",
+      "paper": 0,
+      "queue": [],
+      "nextMaintain": "2024-12-12",
       "maintains": [],
       "refillPaper": []
     }
@@ -194,7 +219,8 @@
       "password": "1",
       "printers": [
         "306B1.1",
-        "306B1.2"
+        "306B1.2",
+        "12"
       ]
     }
   ],

@@ -5,6 +5,7 @@ const AddPrinterModal = ({ onClose }) => {
   const [id, setId] = useState("");  // For printer ID
   const [location, setLocation] = useState("");  // For printer location
   const [officerID, setOfficerID] = useState("");  // For officer ID
+  const [nextMaintain, setNextMaintain] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
@@ -22,6 +23,7 @@ const AddPrinterModal = ({ onClose }) => {
         status: "Off",
         paper: 0,
         queue: [],
+        nextMaintain: nextMaintain,
         maintains: [],
         refillPaper: []
       });
@@ -72,6 +74,18 @@ const AddPrinterModal = ({ onClose }) => {
               id="officerID"
               value={officerID}
               onChange={(e) => setOfficerID(e.target.value)}
+              className="mt-1 p-2 w-full border rounded"
+              required
+            />
+          </div>
+
+          <div className="mb-4">
+            <label htmlFor="officerID" className="block text-sm font-medium text-gray-700">Officer ID</label>
+            <input
+              type="date"
+              id="nextMaintain"
+              value={nextMaintain}
+              onChange={(e) => setNextMaintain(e.target.value)}
               className="mt-1 p-2 w-full border rounded"
               required
             />

@@ -22,16 +22,16 @@ const PaymentPopup = () => {
     e.preventDefault();
     
     const data = {
-      date: new Date().toISOString().split("T")[0],  // Get today's date in YYYY-MM-DD format
-      amount: price,  // Assuming price is set in the component
-      paper: (price/5000) * 10,  // Calculate paper from price
+      date: new Date().toISOString().split("T")[0],  
+      amount: price, 
+      paper: (price/5000) * 10, 
       id: id
     };
   
-    console.log("Sending request data:", data);  // Log the data to ensure it's correct
+    console.log("Sending request data:", data); 
   
     try {
-      const response = await axios.post(`http://localhost:8386/Student`, data);
+      const response = await axios.post(`http://localhost:8386/addPurchase`, data);
       console.log("Purchase successful:", response.data);
     } catch (error) {
       console.error("Error adding purchase. Please try again.", error.response || error);
