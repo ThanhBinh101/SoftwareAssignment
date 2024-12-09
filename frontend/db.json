@@ -376,6 +376,46 @@
     ],
     "Printer": [
         {
+            "id": "205B9.1",
+            "location": "205B9",
+            "status": "Using",
+            "paper": 971,
+            "queue": [],
+            "nextMaintain": "2024-12-31",
+            "maintains": [
+                {
+                    "date": "2024-06-25",
+                    "status": "Checked"
+                },
+                {
+                    "date": "2024-01-30",
+                    "status": "Checked"
+                }
+            ],
+            "availablePaper": 178,
+            "refillPaper": [
+                {
+                    "date": "2024-04-15",
+                    "amount": 100
+                },
+                {
+                    "date": "2024-03-30",
+                    "amount": 200
+                },
+                {
+                    "date": "2024-01-25",
+                    "amount": 500
+                },
+                {
+                    "date": "2024-04-01",
+                    "amount": 900
+                }
+            ],
+            "history": [
+                "doc10"
+            ]
+        },
+        {
             "id": "312B1.1",
             "location": "312B1",
             "status": "Using",
@@ -412,8 +452,7 @@
                 }
             ],
             "history": [
-                "doc_fp7u9k",
-                "doc_ldtgkr"
+                "doc9"
             ]
         },
         {
@@ -445,10 +484,6 @@
                 }
             ],
             "history": [
-                "doc_uwfwkv",
-                "doc_z6btlv",
-                "doc_o0tpgt",
-                "doc_zesbwk"
             ]
         },
         {
@@ -488,11 +523,7 @@
                 }
             ],
             "history": [
-                "doc_31ye4n",
-                "doc_0cvhoo",
-                "doc_tq7w8z",
-                "doc_t0w519",
-                "doc_66f5nl"
+                "doc7"
             ]
         },
         {
@@ -528,8 +559,7 @@
                 }
             ],
             "history": [
-                "doc_59fiov",
-                "doc_6iofmm"
+                "doc5"
             ]
         },
         {
@@ -565,9 +595,7 @@
                 }
             ],
             "history": [
-                "doc_crhk5w",
-                "doc_oddvgv",
-                "doc_d19q2f"
+                "doc3"
             ]
         },
         {
@@ -595,11 +623,7 @@
                 }
             ],
             "history": [
-                "doc_raw140",
-                "doc_83xrkk",
-                "doc_0y9o06",
-                "doc_mqz56m",
-                "doc_0p12gl"
+                "doc8"
             ]
         },
         {
@@ -643,9 +667,7 @@
                 }
             ],
             "history": [
-                "doc_q2yxyt",
-                "doc_mi027r",
-                "doc_rvg48h"
+                "doc4"
             ]
         },
         {
@@ -685,8 +707,7 @@
                 }
             ],
             "history": [
-                "doc_nurg55",
-                "doc_892znr"
+                "doc6"
             ]
         },
         {
@@ -730,11 +751,7 @@
                 }
             ],
             "history": [
-                "doc_8nm65m",
-                "doc_oxqc2a",
-                "doc_u6ybas",
-                "doc_zrd9u5",
-                "doc_sjk8bh"
+                "doc2"
             ]
         },
         {
@@ -778,11 +795,7 @@
                 }
             ],
             "history": [
-                "doc_3qio7t",
-                "doc_vonbi5",
-                "doc_705r46",
-                "doc_izbq4h",
-                "doc_h7sko2"
+                "doc1"
             ]
         }
     ],
